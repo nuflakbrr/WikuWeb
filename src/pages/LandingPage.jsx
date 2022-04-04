@@ -93,30 +93,30 @@ export default function LandingPage() {
 
         {/* Galery and Biodata Section */}
         <section className="grid grid-flow-col h-96 text-white">
-          <div className="flex justify-center items-center grayscale hover:grayscale-0 transition-all delay-100 bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1534237710431-e2fc698436d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YnVpbGRpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60')]">
-            <div className="text-center">
-              <h1 className="font-bold text-[40px]">Gallery</h1>
-              <p>
-                Showing some recordings of beautiful memories at SMK Telkom
-                Malang
-              </p>
-              <button>
-                <ArrowNarrowLeftIcon className="text-white w-8 h-8" />
-              </button>
+          <a href="#gallery">
+            <div className="h-full flex justify-center items-center grayscale hover:grayscale-0 transition-all delay-100 bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1534237710431-e2fc698436d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YnVpbGRpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60')]">
+              <div className="text-center">
+                <h1 className="font-bold text-[40px]">Gallery</h1>
+                <p>
+                  Showing some recordings of beautiful memories at SMK Telkom
+                  Malang
+                </p>
+                <ArrowNarrowLeftIcon className="mx-auto text-white w-8 h-8" />
+              </div>
             </div>
-          </div>
-          <div className="flex justify-center items-center grayscale hover:grayscale-0 transition-all delay-100 bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1615827133499-168ef44cbd77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80')]">
-            <div className="text-center">
-              <h1 className="font-bold text-[40px]">Biodata</h1>
-              <p>
-                Showing at a glance the biodata of all alumni of SMK Telkom
-                Malang
-              </p>
-              <button>
-                <ArrowNarrowRightIcon className="text-white w-8 h-8" />
-              </button>
+          </a>
+          <a href="#biodata">
+            <div className="h-full flex justify-center items-center grayscale hover:grayscale-0 transition-all delay-100 bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1615827133499-168ef44cbd77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80')]">
+              <div className="text-center">
+                <h1 className="font-bold text-[40px]">Biodata</h1>
+                <p>
+                  Showing at a glance the biodata of all alumni of SMK Telkom
+                  Malang
+                </p>
+                <ArrowNarrowRightIcon className="mx-auto text-white w-8 h-8" />
+              </div>
             </div>
-          </div>
+          </a>
         </section>
         {/* Galery and Biodata Section End */}
 
