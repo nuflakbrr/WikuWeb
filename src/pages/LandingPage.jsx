@@ -94,7 +94,7 @@ export default function LandingPage() {
         {/* Galery and Biodata Section */}
         <section className="grid grid-flow-col h-96 text-white">
           <a href="#gallery">
-            <div className="h-full flex justify-center items-center grayscale hover:grayscale-0 transition-all delay-100 bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1534237710431-e2fc698436d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YnVpbGRpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60')]">
+            <div className="h-full flex justify-center items-center grayscale hover:grayscale-0 transition-all delay-100 bg-cover bg-center bg-[url('/Gallery.jpg')]">
               <div className="text-center">
                 <h1 className="font-bold text-[40px]">Gallery</h1>
                 <p>
@@ -106,7 +106,7 @@ export default function LandingPage() {
             </div>
           </a>
           <a href="#biodata">
-            <div className="h-full flex justify-center items-center grayscale hover:grayscale-0 transition-all delay-100 bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1615827133499-168ef44cbd77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80')]">
+            <div className="h-full flex justify-center items-center grayscale hover:grayscale-0 transition-all delay-100 bg-cover bg-center bg-[url('/Biodata.jpg')]">
               <div className="text-center">
                 <h1 className="font-bold text-[40px]">Biodata</h1>
                 <p>
