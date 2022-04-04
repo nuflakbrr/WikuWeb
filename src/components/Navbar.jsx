@@ -3,9 +3,8 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
 const navigation = [
-  { name: "Home", href: "#", current: true },
-  { name: "About", href: "#about", current: false },
-  { name: "Andi Firman", href: "#profile-dashboard", current: false },
+  { name: "Home", href: "#", active: false },
+  { name: "About", href: "#about", active: false },
 ];
 
 const userMenu = [
@@ -20,7 +19,7 @@ function classNames(...classes) {
 
 export default function Navbar(props) {
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-black">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -37,21 +36,23 @@ export default function Navbar(props) {
                 </Disclosure.Button>
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-between">
-                <div className="flex-shrink-0 flex items-center text-slate-50 font-serif font-medium text-2xl">
-                  <h1 className="block lg:hidden h-8 w-auto">Wiku</h1>
-                  <h1 className="hidden lg:block h-8 w-auto">Wikusama</h1>
+                <div className="flex-shrink-0 flex items-center text-slate-50 font-lato font-medium text-2xl">
+                  <h1 className="block lg:hidden h-8 w-auto">WIKU</h1>
+                  <h1 className="hidden lg:block h-8 w-auto font-bold">
+                    WIKUSAMA
+                  </h1>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
-                  <div className="flex space-x-4">
+                  <div className="flex space-x-4 font-lato text-sm font-medium">
                     {navigation.map((item) => (
                       <a
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current
-                            ? "bg-gray-900 text-white"
-                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                          "px-3 py-2 rounded-md text-sm font-medium"
+                          item.active
+                            ? "bg-[#F8BC37] text-white"
+                            : "text-gray-300 hover:text-white",
+                          "px-3 py-2 rounded-md"
                         )}
                         aria-current={item.current ? "page" : undefined}
                       >
@@ -65,8 +66,11 @@ export default function Navbar(props) {
                 {/* Profile dropdown */}
                 <Menu as="div" className="ml-3 relative">
                   <div>
-                    <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                    <Menu.Button className="flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                       <span className="sr-only">Open user menu</span>
+                      <h1 className="hidden sm:block text-white py-2 px-3 font-semibold">
+                        Andi Firman
+                      </h1>
                       <img
                         className="h-8 w-8 rounded-full"
                         src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
@@ -83,7 +87,7 @@ export default function Navbar(props) {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none font-lato text-sm">
                       {userMenu.map((item) => (
                         <Menu.Item>
                           {({ active }) => (
@@ -91,7 +95,7 @@ export default function Navbar(props) {
                               href={item.href}
                               className={classNames(
                                 active ? "bg-gray-100" : "",
-                                "block px-4 py-2 text-sm text-gray-700"
+                                "block px-4 py-2 text-gray-700"
                               )}
                             >
                               {item.name}
@@ -107,19 +111,19 @@ export default function Navbar(props) {
           </div>
 
           <Disclosure.Panel className="sm:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+            <div className="px-2 pt-2 pb-3 space-y-1 font-lato font-medium">
               {navigation.map((item) => (
                 <Disclosure.Button
                   key={item.name}
                   as="a"
                   href={item.href}
                   className={classNames(
-                    item.current
+                    item.active
                       ? "bg-gray-900 text-white"
                       : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                    "block px-3 py-2 rounded-md text-base font-medium"
+                    "block px-3 py-2 rounded-md text-base"
                   )}
-                  aria-current={item.current ? "page" : undefined}
+                  aria-current={item.active ? "page" : undefined}
                 >
                   {item.name}
                 </Disclosure.Button>
