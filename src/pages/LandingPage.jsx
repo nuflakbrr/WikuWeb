@@ -120,9 +120,37 @@ export default function LandingPage() {
         </section>
         {/* Galery and Biodata Section End */}
 
-        {/* Lulusan Section */}
-        <section>Lulusan Section</section>
-        {/* Lulusan Section End */}
+        {/* Graduates Section */}
+        <section className="relative text-[#F3F3F3]">
+          <div className="h-96 bg-[#080809] pt-[5rem]">
+            <div className="grayscale-[60%] bg-[url('/GraduatesSection.jpg')] bg-cover bg-fixed h-64 w-full"></div>
+          </div>
+          <div className="absolute grid grid-flow-row bg-[#101010] h-full max-w-sm top-0 right-[15%] py-10 px-8">
+            <h1 className="text-3xl font-semibold text-right leading-[48px]">
+              SMK Telkom Malang Family
+            </h1>
+            <p className="text-right">
+              <span className="font-bold">Wikusama</span> is a community
+              organization for the alumni of SMK Telkom Malang, from the first
+              batch in 1993, and has survived this long until 2022
+            </p>
+            <div id="stats" className="w-full flex justify-between text-white">
+              <div id="alumnus-count">
+                <h1 className="font-extrabold text-lg tracking-wider">1021</h1>
+                <p>Alumnus</p>
+              </div>
+              <div id="students-count">
+                <h1 className="font-extrabold text-lg tracking-wider">458</h1>
+                <p>Students</p>
+              </div>
+              <div id="alumnus-count">
+                <h1 className="font-extrabold text-lg tracking-wider">26</h1>
+                <p>Teachers</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* Graduates Section End */}
 
         {/* Featured Section */}
         <section>
