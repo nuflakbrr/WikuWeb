@@ -1,6 +1,10 @@
 import React from "react";
 
 import { Footer, Navbar } from "../components";
+import {
+  ArrowNarrowRightIcon,
+  ArrowNarrowLeftIcon,
+} from "@heroicons/react/solid";
 
 export default function LandingPage() {
   return (
@@ -30,10 +34,10 @@ export default function LandingPage() {
 
         {/* Greetings Section */}
         <section>
-          <div className="container">
+          <div className="container w-full">
             <div className="bg-[#080809]">
               <div className="flex flex-col lg:flex-row max-w-7xl mx-auto">
-                <div className="w-full px-4">
+                <div className="w-full px-4 flex justify-end items-center text-right">
                   <p className="text-white">
                     I am proud of my students who have graduated and who are
                     still students at SMK Telkom Malang, because they are the
@@ -42,7 +46,7 @@ export default function LandingPage() {
                     certainly never be forgotten
                   </p>
                 </div>
-                <div className="w-full px-4 flex">
+                <div className="w-1/2 px-4 flex justify-end items-center">
                   <div>
                     <h1 className="text-white capitalize text-[30px] font-bold leading-[48px]">
                       Andi Firman
@@ -51,6 +55,8 @@ export default function LandingPage() {
                       Kepala Sekolah
                     </h2>
                   </div>
+                </div>
+                <div className="w-full">
                   <img src="/KepalaSekolah.png" alt="Kepala Sekolah Image" />
                 </div>
               </div>
@@ -86,7 +92,32 @@ export default function LandingPage() {
         {/* About Section End */}
 
         {/* Galery and Biodata Section */}
-        <section>Galery and Biodata Section</section>
+        <section className="grid grid-flow-col h-96 text-white">
+          <div className="flex justify-center items-center grayscale hover:grayscale-0 transition-all delay-100 bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1534237710431-e2fc698436d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YnVpbGRpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60')]">
+            <div className="text-center">
+              <h1 className="font-bold text-[40px]">Gallery</h1>
+              <p>
+                Showing some recordings of beautiful memories at SMK Telkom
+                Malang
+              </p>
+              <button>
+                <ArrowNarrowLeftIcon className="text-white w-8 h-8" />
+              </button>
+            </div>
+          </div>
+          <div className="flex justify-center items-center grayscale hover:grayscale-0 transition-all delay-100 bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1615827133499-168ef44cbd77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80')]">
+            <div className="text-center">
+              <h1 className="font-bold text-[40px]">Biodata</h1>
+              <p>
+                Showing at a glance the biodata of all alumni of SMK Telkom
+                Malang
+              </p>
+              <button>
+                <ArrowNarrowRightIcon className="text-white w-8 h-8" />
+              </button>
+            </div>
+          </div>
+        </section>
         {/* Galery and Biodata Section End */}
 
         {/* Lulusan Section */}
