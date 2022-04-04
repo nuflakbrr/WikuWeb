@@ -1,26 +1,27 @@
-import { Fragment } from "react";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { Fragment } from "react"
+import { Disclosure, Menu, Transition } from "@headlessui/react"
+import { MenuIcon, XIcon } from "@heroicons/react/outline"
+import { NavLink } from "react-router-dom"
+import '../index.css'
 
 const navigation = [
-  { name: "Home", href: "#", current: true },
+  { name: "Home", href: "/", current: true },
   { name: "About", href: "#about", current: false },
-  { name: "Andi Firman", href: "#profile-dashboard", current: false },
-];
+]
 
 const userMenu = [
   { name: "Profile dashboard", href: "#profile-dashboard" },
   { name: "Settings", href: "#settings" },
   { name: "Log out", href: "#logout" },
-];
+]
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
+  return classes.filter(Boolean).join(" ")
 }
 
 export default function Navbar(props) {
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-[#080809]">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -37,9 +38,9 @@ export default function Navbar(props) {
                 </Disclosure.Button>
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-between">
-                <div className="flex-shrink-0 flex items-center text-slate-50 font-serif font-medium text-2xl">
-                  <h1 className="block lg:hidden h-8 w-auto">Wiku</h1>
-                  <h1 className="hidden lg:block h-8 w-auto">Wikusama</h1>
+                <div className="flex-shrink-0 flex items-center text-slate-50 uppercase font-semibold text-2xl">
+                  <NavLink to="/" className="block lg:hidden h-8 w-auto">Wikusama</NavLink>
+                  <NavLink to="/" className="hidden lg:block h-8 w-auto">Wikusama</NavLink>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
@@ -49,8 +50,8 @@ export default function Navbar(props) {
                         href={item.href}
                         className={classNames(
                           item.current
-                            ? "bg-gray-900 text-white"
-                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                            ? "bg-gray-800 text-white"
+                            : "text-gray-300 hover:bg-gray-800 hover:text-white",
                           "px-3 py-2 rounded-md text-sm font-medium"
                         )}
                         aria-current={item.current ? "page" : undefined}
@@ -63,9 +64,11 @@ export default function Navbar(props) {
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 {/* Profile dropdown */}
-                <Menu as="div" className="ml-3 relative">
+                <Menu as="div" className="relative">
                   <div>
-                    <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                    <Menu.Button className="flex items-center justify-center px-2 py-1 text-sm rounded-full">
+                      <h4 className="text-white mr-2 capitalize hidden lg:hidden">Andi Firman</h4>
+                      <h4 className="text-white mr-2 capitalize hidden lg:block">Andi Firman</h4>
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="h-8 w-8 rounded-full"
@@ -129,5 +132,5 @@ export default function Navbar(props) {
         </>
       )}
     </Disclosure>
-  );
+  )
 }
