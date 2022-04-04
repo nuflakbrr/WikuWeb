@@ -1,6 +1,6 @@
 import React from "react";
 
-import Navbar from "../components/Navbar";
+import { Footer, Navbar } from "../components";
 
 export default function LandingPage() {
     return (
@@ -26,8 +26,8 @@ export default function LandingPage() {
             </section>
             <section>
                 <div className="container">
-                    <div className="flex flex-col lg:flex-row">
-                        <div className="bg-[#080809]">
+                    <div className="flex flex-col lg:flex-row bg-[#080809]">
+                        <div className="max-w-7xl mx-auto">
                             <div className="w-full px-4">
                                 <p className="text-white">
                                     I am proud of my students who have graduated and who are still students at SMK Telkom Malang, because they are the future generation, and who play a big role in the progress of this country, their achievements during school will certainly never be forgotten
@@ -42,6 +42,7 @@ export default function LandingPage() {
                     </div>
                 </div>
             </section>
+            <Footer />
         </>
     );
 }
