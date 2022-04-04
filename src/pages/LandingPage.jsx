@@ -1,24 +1,21 @@
-import React from 'react'
+import React from "react";
 
-import Navbar from '../components/Navbar'
+import Navbar from "../components/Navbar";
 
 export default function LandingPage() {
-    return (
-        <>
-            <Navbar />
-            <section>
-                <div className="container">
-                    <div className="flex flex-wrap">
-                        <div className="w-full self-center px-4">
-                            awdasdw3
-                        </div>
-                        <img src="/LandingPage.jpg" alt="Landing Page Image" className="w-full h-80" />
-                    </div>
-                </div>
-            </section>
-            <section>
-                awdawdawdawd
-            </section>
-        </>
-    )
+  return (
+    <>
+      <Navbar />
+      <section>
+        <div className="container">
+          <div className="flex flex-wrap">
+            <div className="flex-shrink-0 bg-cover bg-center w-[100vw] h-[24rem] sm:h-[22rem] text-2xl text-center text-white bg-[url('/LandingPage.jpg')]">
+              <span className="block">Ikatan Alumni SMK Telkom Malang</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>Greeting section</section>
+    </>
+  );
 }
