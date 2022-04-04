@@ -1,25 +1,37 @@
-import { Fragment } from "react";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { Fragment } from "react"
+import { Disclosure, Menu, Transition } from "@headlessui/react"
+import { MenuIcon, XIcon } from "@heroicons/react/outline"
+import { NavLink } from "react-router-dom"
+import '../index.css'
 
 const navigation = [
+<<<<<<< HEAD
   { name: "Home", href: "#", active: false },
   { name: "About", href: "#about", active: false },
 ];
+=======
+  { name: "Home", href: "/", current: true },
+  { name: "About", href: "#about", current: false },
+]
+>>>>>>> 0c513ad16636d17e6943ff08fe524f6da173a54c
 
 const userMenu = [
   { name: "Profile dashboard", href: "#profile-dashboard" },
   { name: "Settings", href: "#settings" },
   { name: "Log out", href: "#logout" },
-];
+]
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
+  return classes.filter(Boolean).join(" ")
 }
 
 export default function Navbar(props) {
   return (
+<<<<<<< HEAD
     <Disclosure as="nav" className="bg-black">
+=======
+    <Disclosure as="nav" className="bg-[#080809]">
+>>>>>>> 0c513ad16636d17e6943ff08fe524f6da173a54c
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -36,11 +48,17 @@ export default function Navbar(props) {
                 </Disclosure.Button>
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-between">
+<<<<<<< HEAD
                 <div className="flex-shrink-0 flex items-center text-slate-50 font-lato font-medium text-2xl">
                   <h1 className="block lg:hidden h-8 w-auto">WIKU</h1>
                   <h1 className="hidden lg:block h-8 w-auto font-bold">
                     WIKUSAMA
                   </h1>
+=======
+                <div className="flex-shrink-0 flex items-center text-slate-50 uppercase font-semibold text-2xl">
+                  <NavLink to="/" className="block lg:hidden h-8 w-auto">Wikusama</NavLink>
+                  <NavLink to="/" className="hidden lg:block h-8 w-auto">Wikusama</NavLink>
+>>>>>>> 0c513ad16636d17e6943ff08fe524f6da173a54c
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4 font-lato text-sm font-medium">
@@ -49,10 +67,17 @@ export default function Navbar(props) {
                         key={item.name}
                         href={item.href}
                         className={classNames(
+<<<<<<< HEAD
                           item.active
                             ? "bg-[#F8BC37] text-white"
                             : "text-gray-300 hover:text-white",
                           "px-3 py-2 rounded-md"
+=======
+                          item.current
+                            ? "bg-gray-800 text-white"
+                            : "text-gray-300 hover:bg-gray-800 hover:text-white",
+                          "px-3 py-2 rounded-md text-sm font-medium"
+>>>>>>> 0c513ad16636d17e6943ff08fe524f6da173a54c
                         )}
                         aria-current={item.current ? "page" : undefined}
                       >
@@ -64,9 +89,15 @@ export default function Navbar(props) {
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 {/* Profile dropdown */}
-                <Menu as="div" className="ml-3 relative">
+                <Menu as="div" className="relative">
                   <div>
+<<<<<<< HEAD
                     <Menu.Button className="flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+=======
+                    <Menu.Button className="flex items-center justify-center px-2 py-1 text-sm rounded-full">
+                      <h4 className="text-white mr-2 capitalize hidden lg:hidden">Andi Firman</h4>
+                      <h4 className="text-white mr-2 capitalize hidden lg:block">Andi Firman</h4>
+>>>>>>> 0c513ad16636d17e6943ff08fe524f6da173a54c
                       <span className="sr-only">Open user menu</span>
                       <h1 className="hidden sm:block text-white py-2 px-3 font-semibold">
                         Andi Firman
@@ -133,5 +164,5 @@ export default function Navbar(props) {
         </>
       )}
     </Disclosure>
-  );
+  )
 }
