@@ -1,10 +1,7 @@
 import React from "react";
+import { ArrowNarrowRightIcon, ArrowNarrowLeftIcon } from "@heroicons/react/solid";
 
 import { Footer, Navbar } from "../components";
-import {
-  ArrowNarrowRightIcon,
-  ArrowNarrowLeftIcon,
-} from "@heroicons/react/solid";
 
 export default function LandingPage() {
   return (
@@ -71,7 +68,7 @@ export default function LandingPage() {
             <div className="max-w-7xl mx-auto py-28 px-10">
               <div className="flex flex-wrap">
                 <div className="w-full px-4 lg:w-1/2">
-                  <h1 className="font-bold text-[40px] leading-[48px]">
+                  <h1 className="font-bold text-[32px] md:text-[40px] leading-[48px]">
                     Thing you should <br />
                     know <span className="bg-[#F8BC37]">about us</span>
                   </h1>
@@ -152,26 +149,57 @@ export default function LandingPage() {
         </section>
         {/* Graduates Section End */}
 
-        {/* Featured Section */}
+        {/* Testimonials Section */}
         <section>
           <div className="container">
             <div className="max-w-7xl mx-auto py-28 px-10">
               <div className="flex flex-wrap">
                 <div className="w-full px-4 lg:w-1/2">
-                  <div className="">
-                    <h1 className="font-bold text-[40px] leading-[48px]">
+                  <div>
+                    <h1 className="font-bold text-[32px] md:text-[40px] leading-[48px]">
                       What do the
                       <br />
                       <span className="bg-[#F8BC37]">graduates</span> of SMK
                       Telkom Malang say?
                     </h1>
+
+                    <div className="mt-10 flex flex-wrap">
+                      <div className="w-full lg:w-1/2">
+                        <div>
+                          <h2 className="font-bold text-[24px] leading-[28.8px] mb-2.5">Best IT curriculum</h2>
+                          <p className="text-[#B6B6B6]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dolor senectus cursus sagittis turpis condimentum. Dictum ut sociis in scelerisque quisque massa.</p>
+                        </div>
+                        <div className="mt-5">
+                          <h2 className="font-bold text-[24px] leading-[28.8px] mb-2.5">Productive environment</h2>
+                          <p className="text-[#B6B6B6]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dolor senectus cursus sagittis turpis condimentum. Dictum ut sociis in scelerisque quisque massa.</p>
+                        </div>
+                      </div>
+                      <div className="w-full lg:w-1/2">
+                        <div>
+                          <h2 className="font-bold text-[24px] leading-[28.8px] mb-2.5">Complete facilities</h2>
+                          <p className="text-[#B6B6B6]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dolor senectus cursus sagittis turpis condimentum. Dictum ut sociis in scelerisque quisque massa.</p>
+                        </div>
+                        <div className="mt-5">
+                          <h2 className="font-bold text-[24px] leading-[28.8px] mb-2.5">Best IT curriculum</h2>
+                          <p className="text-[#B6B6B6]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dolor senectus cursus sagittis turpis condimentum. Dictum ut sociis in scelerisque quisque massa.</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+                </div>
+                <div className="w-full px-4 lg:w-1/2 mt-8 lg:mt-0">
+                  <div className="bg-[#080809] -z-10 p-5">
+                    <h2 className="text-white text-right font-bold text-[40px] leading-[48px]">Dea Ivana</h2>
+                    <h4 className="text-white text-right font-medium text-[16px] leading-[19.2px]">Product designer at Shoope</h4>
+                    <h4 className="text-white text-right font-light text-[16px] leading-[19.2px]">Mokleters 21</h4>
+                  </div>
+                  <img src="/AlumniWanita.png" alt="Alumni Wanita Image" className="lg:-mt-52 xl:-mb-28" />
                 </div>
               </div>
             </div>
           </div>
         </section>
-        {/* Featured Section End */}
+        {/* Testimonials Section End */}
       </div>
       <Footer />
     </>
