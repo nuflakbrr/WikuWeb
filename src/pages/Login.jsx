@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 export default function Login() {
     return (
@@ -62,7 +63,7 @@ export default function Login() {
                                 {/* Sign Up */}
                                 <div className="flex items-center justify-center mt-5">
                                     <p className="text-sm text-center">Don’t have an account ?</p>
-                                    <a href="#" className="text-sm text-center font-semibold ml-2">Sign Up for Free</a>
+                                    <NavLink to="/register" className="text-sm text-center font-semibold ml-2">Sign Up for Free</NavLink>
                                 </div>
                             </div>
 
