@@ -3,6 +3,13 @@ import { Footer, Navbar } from "../components";
 
 import { SearchIcon } from "@heroicons/react/solid";
 
+const filter = [
+  { name: "All", value: "all", selected: true },
+  { name: "RPL", value: "rpl" },
+  { name: "TKJ", value: "tkj" },
+  { name: "Others", value: "others" },
+];
+
 function Biodata(props) {
   return (
     <>
@@ -29,12 +36,38 @@ function Biodata(props) {
               type="text"
               name="search"
               id="search"
-              className="rounded-lg drop-shadow-md h-12 w-1/2 p-4"
+              className="rounded-lg shadow-lg shadow-slate-200 h-12 w-1/2 p-4"
               placeholder="Find wikusama’s family here"
             />
-            <div className="rounded-lg bg-[#070708] p-2 flex justify-center items-center">
+            <button className="rounded-lg bg-[#070708] p-2 flex justify-center items-center">
               <SearchIcon className="text-white w-8 h-8" />
-            </div>
+            </button>
+          </div>
+        </section>
+
+        {/* Filter */}
+        <section className="py-2">
+          <div className="m-auto w-1/4">
+            <ul class="flex justify-center items-center gap-x-5 m-10 max-w-md mx-auto">
+              {filter.map((item) => (
+                <li>
+                  <input
+                    class="sr-only peer"
+                    type="radio"
+                    value={item.value}
+                    name="filter"
+                    id={item.value}
+                    defaultChecked={item.selected}
+                  />
+                  <label
+                    class="block min-w-[4.5rem] px-3 py-2 text-center text-sm bg-white border-b-4 border-transparent cursor-pointer focus:outline-none hover:border-slate-200 peer-checked:border-[#F8BC37]"
+                    for={item.value}
+                  >
+                    {item.name}
+                  </label>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
       </div>
