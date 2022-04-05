@@ -14,7 +14,7 @@ function Biodata(props) {
   return (
     <>
       <Navbar />
-      <div className="overflow-x-hidden">
+      <div className="overflow-x-hidden bg-[#F7F7F7]">
         {/* Header section */}
         <section className="py-16">
           <div className="container mx-auto w-2/3 text-center">
@@ -60,7 +60,7 @@ function Biodata(props) {
                     defaultChecked={item.selected}
                   />
                   <label
-                    class="block min-w-[4.5rem] px-3 py-2 text-center text-sm bg-white border-b-4 border-transparent cursor-pointer focus:outline-none hover:border-slate-200 peer-checked:border-[#F8BC37]"
+                    class="block min-w-[4.5rem] px-3 py-2 text-center text-sm border-b-4 border-transparent cursor-pointer focus:outline-none hover:border-slate-200 peer-checked:border-[#F8BC37]"
                     for={item.value}
                   >
                     {item.name}
