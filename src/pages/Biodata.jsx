@@ -73,7 +73,7 @@ function Biodata(props) {
 
         {/* Cards section */}
         <section>
-          <div className="mx-auto w-[90%] md:w-[85%] lg:w-[90%] mb-4 grid gap-2 grid-cols-profile-cards justify-items-center">
+          <div className="mx-auto w-[90%] md:w-[85%] lg:w-[90%] mb-4 grid gap-4 grid-cols-profile-cards justify-items-center">
             <BiodataCard />
             <BiodataCard />
             <BiodataCard />
