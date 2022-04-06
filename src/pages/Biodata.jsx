@@ -1,7 +1,7 @@
 import React from "react";
 import { Footer, Navbar, BiodataCard } from "../components";
 
-import { SearchIcon } from "@heroicons/react/solid";
+import { SearchIcon, ChevronDownIcon } from "@heroicons/react/solid";
 
 const filter = [
   { name: "All", value: "all", selected: true },
@@ -84,7 +84,16 @@ function Biodata(props) {
             <BiodataCard />
             <BiodataCard />
             <BiodataCard />
+            <BiodataCard />
+            <BiodataCard />
           </div>
+        </section>
+
+        {/* Read more */}
+        <section className="flex justify-center mt-6 mb-12">
+          <button>
+            <ChevronDownIcon className="w-14 h-10 text-gray-400 hover:text-black hover:scale-110 hover:translate-y-2 transition-all duration-150" />
+          </button>
         </section>
       </div>
       <Footer />
