@@ -1,5 +1,5 @@
 import React from "react";
-import { Footer, Navbar } from "../components";
+import { Footer, Navbar, BiodataCard } from "../components";
 
 import { SearchIcon } from "@heroicons/react/solid";
 
@@ -30,7 +30,7 @@ function Biodata(props) {
         </section>
 
         {/* Search bar */}
-        <section className="py-4">
+        <section>
           <div className="flex justify-center gap-4 m-auto text-center w-2/3">
             <input
               type="text"
@@ -68,6 +68,17 @@ function Biodata(props) {
                 </li>
               ))}
             </ul>
+          </div>
+        </section>
+
+        {/* Cards section */}
+        <section>
+          <div className="mx-auto w-[90%] bg-red-200 mb-4 grid gap-4 grid-cols-profile-cards items-start">
+            <BiodataCard />
+            <BiodataCard />
+            <BiodataCard />
+            <BiodataCard />
+            <BiodataCard />
           </div>
         </section>
       </div>

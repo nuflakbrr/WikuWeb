@@ -8,6 +8,9 @@ module.exports = {
     extend: {
       fontFamily: {
         'lato': ['Lato', 'sans-serif']
+      },
+      gridTemplateColumns: {
+        'profile-cards': 'repeat(auto-fit, minmax(20.25rem, 1fr))'
       }
     },
   },
