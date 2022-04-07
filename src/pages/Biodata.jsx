@@ -36,7 +36,7 @@ function Biodata(props) {
               type="text"
               name="search"
               id="search"
-              className="rounded-lg shadow-lg shadow-slate-200 h-12 w-1/2 p-4"
+              className="rounded-lg shadow-lg shadow-slate-200 h-12 w-1/2 p-4 outline-none"
               placeholder="Find wikusama’s family here"
             />
             <button className="rounded-lg bg-[#070708] p-2 flex justify-center items-center">
@@ -73,7 +73,7 @@ function Biodata(props) {
 
         {/* Cards section */}
         <section>
-          <div className="mx-auto w-[90%] md:w-[85%] lg:w-[90%] mb-4 grid gap-4 grid-cols-profile-cards justify-items-center">
+          <div className="mx-auto w-[95%] lg:w-[90%] mb-4 grid gap-4 grid-cols-profile-cards justify-items-center">
             <BiodataCard />
             <BiodataCard />
             <BiodataCard />
