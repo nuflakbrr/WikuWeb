@@ -3,6 +3,13 @@ import { Link } from "react-router-dom";
 import { Navbar, Footer, ProfileForm, PasswordForm } from "../components";
 
 function Profile(props) {
+  const activeClass = 'text-black py-3 border-b-[3px] border-[#F8BC37]'
+  const inActiveClass = 'text-[#B6B6B6] py-3'
+
+  const activeClassses = (path) => {
+    return window.location.pathname === path ? activeClass : inActiveClass
+  }
+
   return (
     <>
       <Navbar />
@@ -32,11 +39,11 @@ function Profile(props) {
         <section className="flex justify-center gap-6 py-3">
           <Link
             to="/profile/edit"
-            className="text-black py-3 border-b-[3px] border-[#F8BC37]"
+            className={activeClassses("/profile/edit")}
           >
             Change Profile
           </Link>
-          <Link to="/profile/change-password" className="text-[#B6B6B6] py-3 ">
+          <Link to="/profile/change-password" className={activeClassses("/profile/change-password")}>
             Change Password
           </Link>
           <Link to="#" className="text-[#B6B6B6] py-3">
