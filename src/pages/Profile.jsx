@@ -26,6 +26,22 @@ function Profile(props) {
             </div>
           </div>
         </section>
+
+        {/*  */}
+        <section className="flex justify-center gap-6 py-3">
+          <a
+            href="#"
+            className="text-black py-3 border-b-[3px] border-[#F8BC37]"
+          >
+            Change Profile
+          </a>
+          <a href="#" className="text-[#B6B6B6] py-3 ">
+            Change Password
+          </a>
+          <a href="#" className="text-[#B6B6B6] py-3">
+            Media Form
+          </a>
+        </section>
       </div>
       <Footer />
     </>
