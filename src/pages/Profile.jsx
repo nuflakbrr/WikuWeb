@@ -1,5 +1,6 @@
 import React from "react";
-import { Navbar, Footer, ProfileForm } from "../components";
+import { Link } from "react-router-dom";
+import { Navbar, Footer, ProfileForm, PasswordForm } from "../components";
 
 function Profile(props) {
   return (
@@ -29,22 +30,23 @@ function Profile(props) {
 
         {/* Form navigation */}
         <section className="flex justify-center gap-6 py-3">
-          <a
-            href="#"
+          <Link
+            to="/profile/edit"
             className="text-black py-3 border-b-[3px] border-[#F8BC37]"
           >
             Change Profile
-          </a>
-          <a href="#" className="text-[#B6B6B6] py-3 ">
+          </Link>
+          <Link to="/profile/change-password" className="text-[#B6B6B6] py-3 ">
             Change Password
-          </a>
-          <a href="#" className="text-[#B6B6B6] py-3">
+          </Link>
+          <Link to="#" className="text-[#B6B6B6] py-3">
             Media Form
-          </a>
+          </Link>
         </section>
 
         {/* Forms */}
-        <ProfileForm />
+        {/* <ProfileForm /> */}
+        {props.form === "change-password" ? <PasswordForm /> : <ProfileForm />}
       </div>
       <Footer />
     </>
