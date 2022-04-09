@@ -45,7 +45,7 @@ export default function Register() {
                             {/* Image Component */}
                             <div className="w-full md:w-1/2">
                                 <div className="flex flex-col items-center">
-                                    <img src="/Register.png" alt="Login" className="w-[100vw] md:h-screen bg-cover bg-center" />
+                                    <img src="/Register.png" alt="Register" className="w-[100vw] md:h-screen bg-cover bg-center" />
                                 </div>
                             </div>
                         </div>
