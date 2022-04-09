@@ -3,3 +3,4 @@ export { default as Footer } from './Footer'
 export { default as BiodataCard } from './BiodataCard'
 
 export { default as ProfileForm } from './Profile/Profile.form'
+export { default as PasswordForm } from './Profile/Password.form'
