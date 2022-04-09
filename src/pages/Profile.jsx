@@ -1,5 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {
+  Link,
+  Routes,
+  Route,
+  useMatch,
+  useResolvedPath,
+  Navigate,
+} from "react-router-dom";
 import { Navbar, Footer, ProfileForm, PasswordForm } from "../components";
 
 function Profile(props) {
@@ -30,26 +37,40 @@ function Profile(props) {
 
         {/* Form navigation */}
         <section className="flex justify-center gap-6 py-3">
-          <Link
-            to="/profile/edit"
-            className="text-black py-3 border-b-[3px] border-[#F8BC37]"
-          >
-            Change Profile
-          </Link>
-          <Link to="/profile/change-password" className="text-[#B6B6B6] py-3 ">
-            Change Password
-          </Link>
-          <Link to="#" className="text-[#B6B6B6] py-3">
-            Media Form
-          </Link>
+          <CustomLink to="edit">Profile change</CustomLink>
+          <CustomLink to="change-password">Password change</CustomLink>
+          <CustomLink to="upload-media">Upload media</CustomLink>
         </section>
 
-        {/* Forms */}
-        {/* <ProfileForm /> */}
-        {props.form === "change-password" ? <PasswordForm /> : <ProfileForm />}
+        <Routes>
+          <Route path="/">
+            <Route index element={<Navigate to={"edit"} replace />} />
+            <Route path="edit" element={<ProfileForm />} />
+            <Route path="change-password" element={<PasswordForm />} />
+            <Route path="*" element={<Navigate to={"/404"} replace />} />
+          </Route>
+        </Routes>
       </div>
       <Footer />
     </>
+  );
+}
+
+function CustomLink(props) {
+  let resolved = useResolvedPath(props.to);
+  let match = useMatch({ path: resolved.pathname, end: true });
+
+  const activeClass = "text-black py-3 border-b-[3px] border-[#F8BC37]";
+  const inActiveClass = "text-[#B6B6B6] py-3";
+
+  return (
+    <Link
+      className={match ? activeClass : inActiveClass}
+      to={props.to}
+      {...props}
+    >
+      {props.children}
+    </Link>
   );
 }
 
