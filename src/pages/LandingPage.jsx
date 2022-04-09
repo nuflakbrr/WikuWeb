@@ -2,6 +2,7 @@ import React from "react";
 import { ArrowNarrowRightIcon, ArrowNarrowLeftIcon } from "@heroicons/react/solid";
 
 import { Footer, Navbar } from "../components";
+import { NavLink } from "react-router-dom";
 
 export default function LandingPage() {
   return (
@@ -90,7 +91,7 @@ export default function LandingPage() {
 
         {/* Galery and Biodata Section */}
         <section className="grid grid-flow-col h-96 text-white">
-          <a href="#gallery">
+          <NavLink to="/galery">
             <div className="h-full flex justify-center items-center grayscale hover:grayscale-0 transition-all delay-100 bg-cover bg-center bg-[url('/Gallery.jpg')]">
               <div className="text-center">
                 <h1 className="font-bold text-[40px]">Gallery</h1>
@@ -101,8 +102,8 @@ export default function LandingPage() {
                 <ArrowNarrowLeftIcon className="mx-auto text-white w-8 h-8" />
               </div>
             </div>
-          </a>
-          <a href="#biodata">
+          </NavLink>
+          <NavLink to="/biodata">
             <div className="h-full flex justify-center items-center grayscale hover:grayscale-0 transition-all delay-100 bg-cover bg-center bg-[url('/Biodata.jpg')]">
               <div className="text-center">
                 <h1 className="font-bold text-[40px]">Biodata</h1>
@@ -113,7 +114,7 @@ export default function LandingPage() {
                 <ArrowNarrowRightIcon className="mx-auto text-white w-8 h-8" />
               </div>
             </div>
-          </a>
+          </NavLink>
         </section>
         {/* Galery and Biodata Section End */}
 
