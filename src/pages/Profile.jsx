@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Footer } from "../components";
+import { Navbar, Footer, ProfileForm } from "../components";
 
 function Profile(props) {
   return (
@@ -27,7 +27,7 @@ function Profile(props) {
           </div>
         </section>
 
-        {/*  */}
+        {/* Form navigation */}
         <section className="flex justify-center gap-6 py-3">
           <a
             href="#"
@@ -42,6 +42,9 @@ function Profile(props) {
             Media Form
           </a>
         </section>
+
+        {/* Forms */}
+        <ProfileForm />
       </div>
       <Footer />
     </>
