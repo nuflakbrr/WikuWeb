@@ -2,7 +2,8 @@ import React, { useState } from "react";
 
 export default function Profile(props) {
   const [source, setSource] = useState(
-    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+    // "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
   );
   const [fileInput, setFileInput] = useState("");
 
@@ -23,6 +24,10 @@ export default function Profile(props) {
     e.preventDefault();
     if (!source) return;
     console.log(source);
+  };
+
+  const setProfileBlank = () => {
+    setSource("/BlankProfile.jpg");
   };
 
   return (
@@ -88,25 +93,36 @@ export default function Profile(props) {
               This will be displayed in your profile
             </p>
           </label>
-          <div class="relative h-40 rounded-lg border-dashed border-2 border-gray-200 bg-white flex justify-center items-center">
-            <div class="absolute">
-              <div class="flex flex-col items-center">
-                <span class="block">Browse files</span>
+
+          <div className="flex justify-between grow">
+            <img src={source} className="w-[6rem] h-[6rem] rounded-full" />
+            <div className="flex flex-row-reverse gap-6 items-center">
+              <div class="relative bg-black text-white flex justify-center items-center h-10 w-[6rem] shadow-lg cursor-pointer">
+                <div class="absolute">
+                  <span class="block">Update</span>
+                </div>
+                <input
+                  type="file"
+                  accept="image/*"
+                  class="opacity-0 w-full h-full cursor-pointer"
+                  name=""
+                  onChange={handleFile}
+                  value={fileInput}
+                />
               </div>
+              <button
+                onClick={setProfileBlank}
+                className="h-10 w-[6rem] shadow-lg"
+              >
+                Delete
+              </button>
             </div>
-            <input
-              type="file"
-              accept="image/*"
-              class="h-full w-full opacity-0"
-              name=""
-              onChange={handleFile}
-              value={fileInput}
-            />
           </div>
-          <img src={source} className="w-16 h-16" />
         </div>
 
-        <button type="submit">submit</button>
+        <button type="submit" className="bg-slate-500">
+          submit
+        </button>
       </div>
     </form>
   );
