@@ -6,7 +6,7 @@ export default function Password(props) {
       <form action="#">
         <div className="flex flex-col gap-6 container w-5/6 py-8 mx-auto">
           <div className="flex">
-            <label htmlFor="current-password" className="w-1/3">
+            <label htmlFor="current-password" className="w-1/3 font-semibold">
               Current password
             </label>
             <input
@@ -19,7 +19,7 @@ export default function Password(props) {
           </div>
 
           <div className="flex">
-            <label htmlFor="new-password" className="w-1/3">
+            <label htmlFor="new-password" className="w-1/3 font-semibold">
               New password
             </label>
             <input
@@ -32,7 +32,7 @@ export default function Password(props) {
           </div>
 
           <div className="flex">
-            <label htmlFor="email" className="w-1/3">
+            <label htmlFor="email" className="w-1/3 font-semibold">
               Confirm new password
             </label>
             <input
@@ -44,8 +44,16 @@ export default function Password(props) {
             />
           </div>
 
-          <div className="w-full mx-auto">
-            <a href="#forgot-password">Forgot password?</a>
+          <div className="flex">
+            <div className="w-1/3" />
+            <div className="grid gap-4">
+              <button className="bg-black text-white p-2">
+                Change password
+              </button>
+              <a href="#forgot-password" className="hover:underline">
+                Forgot password?
+              </a>
+            </div>
           </div>
         </div>
       </form>
