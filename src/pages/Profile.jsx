@@ -36,7 +36,7 @@ function Profile(props) {
         </section>
 
         {/* Form navigation */}
-        <section className="flex justify-center gap-6 py-3">
+        <section className="flex justify-center gap-6 py-3 bg-[#F9F9F9]">
           <CustomLink to="edit">Profile change</CustomLink>
           <CustomLink to="change-password">Password change</CustomLink>
           <CustomLink to="upload-media">Upload media</CustomLink>
