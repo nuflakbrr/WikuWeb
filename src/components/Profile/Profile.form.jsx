@@ -1,7 +1,5 @@
-import React, { Fragment, useState } from "react";
-import { Listbox, Transition } from "@headlessui/react";
-import { SelectorIcon, CheckIcon } from "@heroicons/react/outline";
-import { useForm, Controller } from "react-hook-form";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 
 export default function Profile(props) {
   const [source, setSource] = useState(
@@ -14,8 +12,7 @@ export default function Profile(props) {
     { nama: "Others", value: "others" },
   ];
 
-  const [jurusan, setJurusan] = useState(daftarJurusan[0]);
-  const { control, handleSubmit, register, setValue } = useForm();
+  const { handleSubmit, register, setValue } = useForm();
 
   const handleFile = (e) => {
     const file = e.target.files[0];
@@ -45,7 +42,12 @@ export default function Profile(props) {
   };
 
   return (
-    <form action="#" onSubmit={handleSubmit(onSubmit)} className="bg-[#F9F9F9]">
+    <form
+      action="#"
+      onSubmit={handleSubmit(onSubmit)}
+      className="bg-[#F9F9F9]"
+      id="edit-profile-form"
+    >
       <div className="flex flex-col gap-6 container w-5/6 py-8 mx-auto">
         <div className="flex">
           <label htmlFor="username" className="w-1/3 font-semibold">

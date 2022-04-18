@@ -28,7 +28,10 @@ function Profile(props) {
               <button className="w-20 py-2 px-3 bg-white text-black">
                 Cancel
               </button>
-              <button className="w-20 py-2 px-3 bg-black text-white">
+              <button
+                className="w-20 py-2 px-3 bg-black text-white"
+                form="edit-profile-form"
+              >
                 Save
               </button>
             </div>
