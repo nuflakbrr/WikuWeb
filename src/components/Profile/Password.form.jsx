@@ -15,7 +15,11 @@ export default function Password(props) {
 
   return (
     <div>
-      <form action="#" onSubmit={handleSubmit(onSubmit)}>
+      <form
+        action="#"
+        onSubmit={handleSubmit(onSubmit)}
+        className="bg-[#F9F9F9]"
+      >
         <div className="flex flex-col gap-6 container w-5/6 py-8 mx-auto">
           <div className="flex">
             <label htmlFor="current-password" className="w-1/3 font-semibold">
@@ -25,7 +29,7 @@ export default function Password(props) {
               type="password"
               name="current-password"
               id="current-password"
-              className="grow outline outline-1 outline-[#070708] p-2 password"
+              className="grow outline outline-1 outline-[#070708] p-2 bg-transparent"
               placeholder="andiFirman123"
               {...register("current-password")}
             />
@@ -39,7 +43,7 @@ export default function Password(props) {
               type="password"
               name="new-password"
               id="new-password"
-              className="grow outline outline-1 outline-[#070708] p-2"
+              className="grow outline outline-1 outline-[#070708] p-2  bg-transparent"
               placeholder="firmanAndi321"
               {...register("new-password")}
             />
@@ -54,7 +58,7 @@ export default function Password(props) {
                 type="password"
                 name="confirm-password"
                 id="confirm-password"
-                className="w-full outline outline-1 outline-[#070708] p-2"
+                className="w-full outline outline-1 outline-[#070708] p-2  bg-transparent"
                 {...register("confirm-password", {
                   validate: (value) => value == watch("new-password"),
                 })}
