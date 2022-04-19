@@ -31,7 +31,15 @@ function Profile(props) {
               </button>
               <button
                 className="w-20 py-2 px-3 bg-black text-white"
-                form="edit-profile-form"
+                // form="edit-profile-form"
+                form={
+                  useMatch({
+                    path: "profile/edit",
+                    end: true,
+                  })
+                    ? "edit-profile-form"
+                    : "media-form"
+                }
               >
                 Save
               </button>

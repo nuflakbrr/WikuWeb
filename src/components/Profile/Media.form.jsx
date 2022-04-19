@@ -36,6 +36,7 @@ export default function MediaForm(props) {
         action="#"
         className="w-4/5 mx-auto"
         onSubmit={handleSubmit(onSubmit)}
+        id="media-form"
       >
         <section>
           <h1 className="text-xl font-bold py-5">Upload Album Image</h1>
@@ -66,7 +67,7 @@ export default function MediaForm(props) {
                 name="instagram"
                 id="instagram"
                 className="w-full bg-transparent focus:outline-none"
-                placeholder="Insert your Instagram’s username"
+                placeholder="Insert your Instagram username"
                 {...register("instagram")}
               />
             </div>
@@ -85,13 +86,12 @@ export default function MediaForm(props) {
                 name="twitter"
                 id="twitter"
                 className="w-full bg-transparent focus:outline-none"
-                placeholder="Insert your twitter’s username"
+                placeholder="Insert your Twitter username"
                 {...register("twitter")}
               />
             </div>
           </div>
         </section>
-        <button>submit</button>
       </form>
     </div>
   );
