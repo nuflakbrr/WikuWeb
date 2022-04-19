@@ -12,7 +12,12 @@ export default function Profile(props) {
     { nama: "Others", value: "others" },
   ];
 
-  const { handleSubmit, register, setValue } = useForm();
+  const {
+    handleSubmit,
+    register,
+    setValue,
+    formState: { errors },
+  } = useForm();
 
   const handleFile = (e) => {
     const file = e.target.files[0];
@@ -209,16 +214,22 @@ export default function Profile(props) {
           <label htmlFor="angkatan" className="w-1/3 font-semibold">
             Angkatan
           </label>
-          <input
-            name="angkatan"
-            id="angkatan"
-            type="number"
-            min={1}
-            max={30}
-            className="grow outline outline-1 outline-[#070708] p-2 bg-transparent"
-            placeholder="Fill here"
-            {...register("angkatan")}
-          />
+          <div className="grow">
+            <input
+              name="angkatan"
+              id="angkatan"
+              type="number"
+              className={classNames(
+                "w-full outline outline-1 outline-[#070708] p-2 bg-transparent",
+                errors.angkatan && "outline-2 outline-red-600"
+              )}
+              placeholder="Fill here"
+              {...register("angkatan", { min: 1, max: 30 })}
+            />
+            {errors.angkatan && (
+              <p className="text-red-600">Hanya terdapat angkatan 1-30</p>
+            )}
+          </div>
         </div>
 
         <div className="flex">
