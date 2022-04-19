@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useDropzone } from "react-dropzone";
-import { CloudUploadIcon } from "@heroicons/react/outline";
+import { CloudUploadIcon, XCircleIcon } from "@heroicons/react/outline";
 import { useForm } from "react-hook-form";
 import { SocialIcon } from "react-social-icons";
 
 export default function MediaForm(props) {
-  const [file, setFile] = useState();
+  const [file, setFile] = useState(null);
 
   const {
     handleSubmit,
@@ -21,6 +21,10 @@ export default function MediaForm(props) {
       setFile(image);
     },
   });
+
+  const setFileEmpty = () => {
+    setFile(null);
+  };
 
   const onSubmit = (data) => {
     var fields = {
@@ -40,13 +44,35 @@ export default function MediaForm(props) {
       >
         <section>
           <h1 className="text-xl font-bold py-5">Upload Album Image</h1>
-          <div
-            className="outline-2 outline-[#070708] outline-dashed flex flex-col items-center text-[#B6B6B6] py-6 text-center"
-            {...getRootProps()}
-          >
-            <input {...getInputProps()} />
-            <CloudUploadIcon className="w-40 h-40" />
-            <p>Upload a nice picture to be displayed in the biodata page!</p>
+          <div className="outline-2 outline-[#070708] outline-dashed flex justify-center items-center text-[#B6B6B6] py-6 text-center">
+            {file == null ? (
+              <div {...getRootProps()} className="flex flex-col items-center">
+                <input {...getInputProps()} />
+                <CloudUploadIcon className="w-40 h-40" />
+                <p>
+                  Upload a nice picture to be displayed in the biodata page!
+                </p>
+              </div>
+            ) : (
+              <div className="flex flex-col">
+                <div
+                  className="relative bg-center bg-cover w-[20.25rem] h-[12rem]"
+                  style={{
+                    backgroundImage: `url("${URL.createObjectURL(file)}")`,
+                  }}
+                >
+                  <button
+                    className="absolute top-2 right-2 bg-red-600 text-white p-1 bg-opacity-50 hover:bg-opacity-100"
+                    onClick={setFileEmpty}
+                  >
+                    Remove
+                  </button>
+                </div>
+                <p className="text-xs">
+                  Your album image will be exactly like this.
+                </p>
+              </div>
+            )}
           </div>
         </section>
 
