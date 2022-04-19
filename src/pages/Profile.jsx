@@ -8,6 +8,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import { Navbar, Footer, ProfileForm, PasswordForm } from "../components";
+import MediaForm from "../components/Profile/Media.form";
 
 function Profile(props) {
   return (
@@ -50,6 +51,7 @@ function Profile(props) {
             <Route index element={<Navigate to={"edit"} replace />} />
             <Route path="edit" element={<ProfileForm />} />
             <Route path="change-password" element={<PasswordForm />} />
+            <Route path="upload-media" element={<MediaForm />} />
             <Route path="*" element={<Navigate to={"/404"} replace />} />
           </Route>
         </Routes>
