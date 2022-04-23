@@ -1,7 +1,7 @@
 import React from "react";
-import { Footer, Navbar, BiodataCard } from "../components";
-
 import { SearchIcon, ChevronDownIcon } from "@heroicons/react/solid";
+
+import { Footer, Navbar, BiodataCard } from "../components";
 
 const filter = [
   { name: "All", value: "all", selected: true },
