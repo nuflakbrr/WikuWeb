@@ -33,18 +33,6 @@ export default function Gallery() {
                         </div>
                     </div>
                 </section>
-                {/* <section className="py-16">
-                    <div className="container mx-auto w-2/3 text-center">
-                        <h1 className="font-[400] text-[30px] tracking-[.55em]">
-                            WIKUSAMA
-                        </h1>
-                        <h1 className="font-[700] text-[64px]">Together We Are Family</h1>
-                        <p className="font-[350] text-[24px]">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting
-                            industry. Lorem Ipsum has been the industry's standard.
-                        </p>
-                    </div>
-                </section> */}
 
                 {/* Filter */}
                 <section className="py-2">
