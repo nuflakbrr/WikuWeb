@@ -9,6 +9,7 @@ import {
   Biodata,
   Profile,
   Gallery,
+  AdminDashboard,
 } from "./pages";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <Route path="/biodata" element={<Biodata />} />
       <Route path="/profile/*" element={<Profile />} />
       <Route path="/gallery" element={<Gallery />} />
+      <Route path="/admin" element={<AdminDashboard />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
