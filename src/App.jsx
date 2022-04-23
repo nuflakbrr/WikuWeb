@@ -8,6 +8,7 @@ import {
   Register,
   Biodata,
   Profile,
+  Gallery,
 } from "./pages";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Route path="/register" element={<Register />} />
       <Route path="/biodata" element={<Biodata />} />
       <Route path="/profile/*" element={<Profile />} />
+      <Route path="/gallery" element={<Gallery />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
