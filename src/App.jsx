@@ -9,8 +9,9 @@ import {
   Biodata,
   Profile,
   Gallery,
-  AdminDashboard,
 } from "./pages";
+
+import { Dashboard } from "./pages/admin";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
       <Route path="/biodata" element={<Biodata />} />
       <Route path="/profile/*" element={<Profile />} />
       <Route path="/gallery" element={<Gallery />} />
-      <Route path="/admin" element={<AdminDashboard />} />
+      <Route path="/admin" element={<Dashboard />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

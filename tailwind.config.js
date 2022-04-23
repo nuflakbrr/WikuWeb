@@ -17,7 +17,8 @@ module.exports = {
         'philippine-silver': '#B6B6B6',
         'ghost-white': '#F9F9F9',
         'vampire-black': '#070708',
-        'saffron': '#F8BC37'
+        'saffron': '#F8BC37',
+        'lotion': '#FAFAFA'
       }
     },
   },
