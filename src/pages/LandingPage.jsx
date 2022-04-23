@@ -91,7 +91,7 @@ export default function LandingPage() {
 
         {/* Galery and Biodata Section */}
         <section className="grid grid-flow-col h-96 text-white">
-          <NavLink to="/galery">
+          <NavLink to="/gallery">
             <div className="h-full flex justify-center items-center grayscale hover:grayscale-0 transition-all delay-100 bg-cover bg-center bg-[url('/Gallery.jpg')]">
               <div className="text-center">
                 <h1 className="font-bold text-[40px]">Gallery</h1>
