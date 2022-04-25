@@ -10,7 +10,7 @@ import { useResolvedPath, useMatch, Link } from "react-router-dom";
 
 function Navbar(props) {
   return (
-    <nav className="fixed bg-white w-24 h-screen flex flex-col items-center justify-between py-5 overflow-hidden">
+    <nav className="fixed bg-white w-[6vw] h-screen flex flex-col items-center justify-between py-5 overflow-hidden border border-[#acafc0]">
       <h1 className="text-carmine-pink font-black text-3xl">W</h1>
 
       <div className="grid gap-10">
