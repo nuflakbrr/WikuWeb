@@ -1,7 +1,6 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
-import { NavLink } from "react-router-dom";
 import "../index.css";
 
 const navigation = [

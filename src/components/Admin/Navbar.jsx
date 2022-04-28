@@ -14,7 +14,7 @@ function Navbar(props) {
       <h1 className="text-carmine-pink font-black text-3xl">W</h1>
 
       <div className="grid gap-10">
-        <CustomLink to="manage/user">
+        <CustomLink to="">
           <UserIcon className="w-6" />
         </CustomLink>
         <CustomLink to="manage/biodata">
