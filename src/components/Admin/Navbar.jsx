@@ -14,10 +14,10 @@ function Navbar(props) {
       <h1 className="text-carmine-pink font-black text-3xl">W</h1>
 
       <div className="grid gap-10">
-        <CustomLink to="">
+        <CustomLink to="/admin">
           <UserIcon className="w-6" />
         </CustomLink>
-        <CustomLink to="manage/biodata">
+        <CustomLink to="/admin/biodata">
           <UserGroupIcon className="w-6" />
         </CustomLink>
         <CustomLink to="manage/image">
