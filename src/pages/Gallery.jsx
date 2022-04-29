@@ -1,7 +1,7 @@
 import React from 'react'
 import { ChevronDownIcon } from "@heroicons/react/solid";
 
-import { BiodataCard, Footer, Navbar } from '../components'
+import { Footer, GalleryCard, Navbar } from '../components'
 
 export default function Gallery() {
     const filter = [
@@ -10,6 +10,69 @@ export default function Gallery() {
         { name: "Login", value: "login" },
     ];
 
+    // looping image
+    const images = [
+        {
+            id: 1,
+            img: "/Gallery-1.jpg",
+            alt: "Gallery 1",
+        },
+        {
+            id: 2,
+            img: "/Gallery-2.jpg",
+            alt: "Gallery 2",
+        },
+        {
+            id: 3,
+            img: "/Gallery-3.jpg",
+            alt: "Gallery 3",
+        },
+        {
+            id: 4,
+            img: "/Gallery-4.jpg",
+            alt: "Gallery 4",
+        },
+        {
+            id: 5,
+            img: "/Gallery-5.jpg",
+            alt: "Gallery 5",
+        },
+        {
+            id: 6,
+            img: "/Gallery-6.jpg",
+            alt: "Gallery 6",
+        },
+        {
+            id: 7,
+            img: "/Gallery-7.jpg",
+            alt: "Gallery 7",
+        },
+        {
+            id: 8,
+            img: "/Gallery-8.jpg",
+            alt: "Gallery 8",
+        },
+        {
+            id: 9,
+            img: "/Gallery-9.jpg",
+            alt: "Gallery 9",
+        },
+        {
+            id: 10,
+            img: "/Gallery-10.jpg",
+            alt: "Gallery 10",
+        },
+        {
+            id: 11,
+            img: "/Gallery-11.jpg",
+            alt: "Gallery 11",
+        },
+        {
+            id: 12,
+            img: "/Gallery-12.jpg",
+            alt: "Gallery 12",
+        },
+    ]
     return (
         <>
             <Navbar />
@@ -62,19 +125,14 @@ export default function Gallery() {
 
                 {/* Cards section */}
                 <section>
-                    <div className="mx-auto w-[95%] lg:w-[90%] mb-4 grid gap-4 grid-cols-profile-cards justify-items-center">
-                        <BiodataCard />
-                        <BiodataCard />
-                        <BiodataCard />
-                        <BiodataCard />
-                        <BiodataCard />
-                        <BiodataCard />
-                        <BiodataCard />
-                        <BiodataCard />
-                        <BiodataCard />
-                        <BiodataCard />
-                        <BiodataCard />
-                        <BiodataCard />
+                    <div className="mx-auto w-[95%] lg:w-[90%] py-4 px-4 grid gap-10 lg:grid-cols-3 xl:grid-cols-3 justify-items-center">
+                        {images.map((item) => (
+                            <GalleryCard
+                                key={item.id}
+                                imgSrc={item.img}
+                                imgAlt={item.alt}
+                            />
+                        ))}
                     </div>
                 </section>
 
