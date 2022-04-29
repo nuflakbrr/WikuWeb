@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../../components/Admin/Navbar";
 import { CalendarIcon, BellIcon, SearchIcon } from "@heroicons/react/outline";
+import { Link } from "react-router-dom";
 
 export default function Biodata(props) {
   return (
@@ -33,6 +34,92 @@ export default function Biodata(props) {
             </button>
             <div className="bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')] w-10 h-10 rounded-full bg-center bg-cover ml-2" />
           </div>
+        </section>
+
+        <section>
+          <table className="w-full border-collapse">
+            <thead>
+              <tr className="bg-carmine-pink text-white">
+                <th className="py-2">Name</th>
+                <th>Angkatan</th>
+                <th>Domisili</th>
+                <th>Jurusan</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Michael Keaton</td>
+                <td>27</td>
+                <td>Malang</td>
+                <td>RPL</td>
+                <td className="text-center py-2">
+                  <Link
+                    to={"/admin/edit/user/1"}
+                    className="border-carmine-pink border-2 rounded-md py-2 px-3 text-carmine-pink"
+                  >
+                    Edit
+                  </Link>
+                </td>
+              </tr>
+              <tr className="bg-platinum">
+                <td>Michael Keaton</td>
+                <td>27</td>
+                <td>Malang</td>
+                <td>RPL</td>
+                <td className="text-center py-2">
+                  <Link
+                    to={"/admin/edit/user/1"}
+                    className="border-carmine-pink border-2 rounded-md py-2 px-3 text-carmine-pink"
+                  >
+                    Edit
+                  </Link>
+                </td>
+              </tr>
+              <tr>
+                <td>Michael Keaton</td>
+                <td>27</td>
+                <td>Malang</td>
+                <td>RPL</td>
+                <td className="text-center py-2">
+                  <Link
+                    to={"/admin/edit/user/1"}
+                    className="border-carmine-pink border-2 rounded-md py-2 px-3 text-carmine-pink"
+                  >
+                    Edit
+                  </Link>
+                </td>
+              </tr>
+              <tr className="bg-platinum">
+                <td>Michael Keaton</td>
+                <td>27</td>
+                <td>Malang</td>
+                <td>RPL</td>
+                <td className="text-center py-2">
+                  <Link
+                    to={"/admin/edit/user/1"}
+                    className="border-carmine-pink border-2 rounded-md py-2 px-3 text-carmine-pink"
+                  >
+                    Edit
+                  </Link>
+                </td>
+              </tr>
+              <tr>
+                <td>Michael Keaton</td>
+                <td>27</td>
+                <td>Malang</td>
+                <td>RPL</td>
+                <td className="text-center py-2">
+                  <Link
+                    to={"/admin/edit/user/1"}
+                    className="border-carmine-pink border-2 rounded-md py-2 px-3 text-carmine-pink"
+                  >
+                    Edit
+                  </Link>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </section>
       </div>
     </div>

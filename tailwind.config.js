@@ -18,7 +18,8 @@ module.exports = {
         'ghost-white': '#F9F9F9',
         'vampire-black': '#070708',
         'saffron': '#F8BC37',
-        'lotion': '#FAFAFA'
+        'lotion': '#FAFAFA',
+        'platinum': '#E5E5E5'
       }
     },
   },
