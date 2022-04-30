@@ -10,7 +10,7 @@ function TableRow(props) {
       <td>{props.jurusan}</td>
       <td className="text-center py-2">
         <Link
-          to={`/admin/edit/user/${props.userId}`}
+          to={`/admin/biodata/edit/${props.userId}`}
           className="border-carmine-pink border-2 rounded-lg py-1 px-4 text-carmine-pink"
         >
           Edit
