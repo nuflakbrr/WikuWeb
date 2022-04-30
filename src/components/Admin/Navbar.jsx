@@ -20,7 +20,7 @@ function Navbar(props) {
         <CustomLink to="/admin/biodata">
           <UserGroupIcon className="w-6" />
         </CustomLink>
-        <CustomLink to="manage/image">
+        <CustomLink to="/admin/image">
           <PhotographIcon className="w-6" />
         </CustomLink>
       </div>

@@ -11,7 +11,7 @@ function TableRow(props) {
       <td className="text-center py-2">
         <Link
           to={`/admin/edit/user/${props.userId}`}
-          className="border-carmine-pink border-2 rounded-lg py-2 px-4 text-carmine-pink"
+          className="border-carmine-pink border-2 rounded-lg py-1 px-4 text-carmine-pink"
         >
           Edit
         </Link>
