@@ -1,7 +1,8 @@
 import React from "react";
 import Navbar from "../../components/Admin/Navbar";
 import { CalendarIcon, BellIcon, SearchIcon } from "@heroicons/react/outline";
-import { Link } from "react-router-dom";
+import TableRow from "../../components/Admin/TableRow";
+import ReportButton from "../../components/Admin/ReportButton";
 
 export default function Biodata(props) {
   return (
@@ -37,7 +38,7 @@ export default function Biodata(props) {
         </section>
 
         <section>
-          <table className="w-full border-collapse">
+          <table className="w-[95%] border-collapse text-lg">
             <thead>
               <tr className="bg-carmine-pink text-white">
                 <th className="py-2">Name</th>
@@ -48,80 +49,54 @@ export default function Biodata(props) {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Michael Keaton</td>
-                <td>27</td>
-                <td>Malang</td>
-                <td>RPL</td>
-                <td className="text-center py-2">
-                  <Link
-                    to={"/admin/edit/user/1"}
-                    className="border-carmine-pink border-2 rounded-md py-2 px-3 text-carmine-pink"
-                  >
-                    Edit
-                  </Link>
-                </td>
-              </tr>
-              <tr className="bg-platinum">
-                <td>Michael Keaton</td>
-                <td>27</td>
-                <td>Malang</td>
-                <td>RPL</td>
-                <td className="text-center py-2">
-                  <Link
-                    to={"/admin/edit/user/1"}
-                    className="border-carmine-pink border-2 rounded-md py-2 px-3 text-carmine-pink"
-                  >
-                    Edit
-                  </Link>
-                </td>
-              </tr>
-              <tr>
-                <td>Michael Keaton</td>
-                <td>27</td>
-                <td>Malang</td>
-                <td>RPL</td>
-                <td className="text-center py-2">
-                  <Link
-                    to={"/admin/edit/user/1"}
-                    className="border-carmine-pink border-2 rounded-md py-2 px-3 text-carmine-pink"
-                  >
-                    Edit
-                  </Link>
-                </td>
-              </tr>
-              <tr className="bg-platinum">
-                <td>Michael Keaton</td>
-                <td>27</td>
-                <td>Malang</td>
-                <td>RPL</td>
-                <td className="text-center py-2">
-                  <Link
-                    to={"/admin/edit/user/1"}
-                    className="border-carmine-pink border-2 rounded-md py-2 px-3 text-carmine-pink"
-                  >
-                    Edit
-                  </Link>
-                </td>
-              </tr>
-              <tr>
-                <td>Michael Keaton</td>
-                <td>27</td>
-                <td>Malang</td>
-                <td>RPL</td>
-                <td className="text-center py-2">
-                  <Link
-                    to={"/admin/edit/user/1"}
-                    className="border-carmine-pink border-2 rounded-md py-2 px-3 text-carmine-pink"
-                  >
-                    Edit
-                  </Link>
-                </td>
-              </tr>
+              <TableRow
+                nama="Michael Keaton"
+                angkatan="27"
+                domisili="Malang"
+                jurusan="RPL"
+                userId="1"
+              />
+              <TableRow
+                nama="Richardo Roy"
+                angkatan="27"
+                domisili="Malang"
+                jurusan="RPL"
+                userId="2"
+              />
+              <TableRow
+                nama="Trevis Ahmad"
+                angkatan="27"
+                domisili="Tuban"
+                jurusan="TKJ"
+                userId="3"
+              />
+              <TableRow
+                nama="Bintara Affan"
+                angkatan="27"
+                domisili="Jakarta"
+                jurusan="TKJ"
+                userId="4"
+              />
+              <TableRow
+                nama="Michelle Putri"
+                angkatan="27"
+                domisili="Bali"
+                jurusan="RPL"
+                userId="5"
+              />
+              <TableRow
+                nama="Muhammad Arya"
+                angkatan="27"
+                domisili="Blitar"
+                jurusan="TKJ"
+                userId="6"
+              />
             </tbody>
           </table>
         </section>
       </div>
+
+      <ReportButton />
     </div>
   );
 }
