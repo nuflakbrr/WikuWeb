@@ -14,13 +14,13 @@ function Navbar(props) {
       <h1 className="text-carmine-pink font-black text-3xl">W</h1>
 
       <div className="grid gap-10">
-        <CustomLink to="/admin">
+        <CustomLink to="/admin" active={props.adminActive}>
           <UserIcon className="w-6" />
         </CustomLink>
-        <CustomLink to="/admin/biodata">
+        <CustomLink to="/admin/biodata" active={props.biodataActive}>
           <UserGroupIcon className="w-6" />
         </CustomLink>
-        <CustomLink to="/admin/image">
+        <CustomLink to="/admin/image" active={props.imageActive}>
           <PhotographIcon className="w-6" />
         </CustomLink>
       </div>
@@ -46,9 +46,9 @@ function CustomLink(props) {
 
   return (
     <Link
-      className={`p-2 rounded-full ${match && "bg-lotion text-carmine-pink"} ${
-        !match && "text-vampire-black"
-      }`}
+      className={`p-2 rounded-full ${
+        (match || props.active) && "bg-lotion text-carmine-pink"
+      } ${!match && !props.active && "text-vampire-black"}`}
       to={props.to}
       {...props}
     >
