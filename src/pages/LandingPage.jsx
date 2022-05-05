@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowNarrowRightIcon, ArrowNarrowLeftIcon } from "@heroicons/react/solid";
 
-import { Footer, Navbar, SEO } from "../components";
+import { Footer, Navbar, NavBeforeLogin, SEO } from "../components";
 import { NavLink } from "react-router-dom";
 
 export default function LandingPage() {
@@ -19,7 +19,10 @@ export default function LandingPage() {
   return (
     <>
       <SEO title={SEOPage.title} description={SEOPage.description} siteUrl={SEOPage.siteUrl} ogType={SEOPage.ogType} ogImage={SEOPage.ogImage} twitter={SEOPage.twitter} twImage={SEOPage.twImage} />
-      <Navbar />
+      {/* Logical before login and after login here */}
+      <NavBeforeLogin />
+      {/* <Navbar /> */}
+      {/* Logical before login and after login End */}
       <div className="overflow-x-hidden">
         {/* Hero Section */}
         <section>
