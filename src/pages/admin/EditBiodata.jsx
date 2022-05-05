@@ -1,10 +1,23 @@
 import React from "react";
 import Navbar from "../../components/Admin/Navbar";
 import EditForm from "../../components/Admin/EditBiodata.form";
+import { SEO } from "../../components";
 
 function EditBiodata(props) {
+  // Setting SEO
+  const SEOPage = {
+    title: "Edit Biodata - WIKUSAMA",
+    description: "WIKUSAMA",
+    siteUrl: "https://wikusama.com",
+    ogType: "website",
+    ogImage: "https://wikusama.com/og.jpg",
+    twitter: "@wikusama",
+    twImage: "https://wikusama.com/tw.jpg",
+  }
+
   return (
     <div className="overflow-x-hidden">
+      <SEO title={SEOPage.title} description={SEOPage.description} siteUrl={SEOPage.siteUrl} ogType={SEOPage.ogType} ogImage={SEOPage.ogImage} twitter={SEOPage.twitter} twImage={SEOPage.twImage} />
       <Navbar biodataActive={true} />
       <div className="absolute right-0 bg-ghost-white w-[94vw] min-h-screen">
         <section className="bg-carmine-pink min-h-[14rem] flex items-center justify-center">

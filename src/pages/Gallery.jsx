@@ -1,9 +1,20 @@
 import React from 'react'
 import { ChevronDownIcon } from "@heroicons/react/solid";
 
-import { Footer, GalleryCard, Navbar } from '../components'
+import { Footer, GalleryCard, Navbar, SEO } from '../components'
 
 export default function Gallery() {
+    // Setting SEO
+    const SEOPage = {
+        title: "Galeri - WIKUSAMA",
+        description: "WIKUSAMA",
+        siteUrl: "https://wikusama.com",
+        ogType: "website",
+        ogImage: "https://wikusama.com/og.jpg",
+        twitter: "@wikusama",
+        twImage: "https://wikusama.com/tw.jpg",
+    }
+
     const filter = [
         { name: "Latest", value: "latest", selected: true },
         { name: "Newest", value: "newest" },
@@ -75,6 +86,7 @@ export default function Gallery() {
     ]
     return (
         <>
+            <SEO title={SEOPage.title} description={SEOPage.description} siteUrl={SEOPage.siteUrl} ogType={SEOPage.ogType} ogImage={SEOPage.ogImage} twitter={SEOPage.twitter} twImage={SEOPage.twImage} />
             <Navbar />
             <div className="overflow-x-hidden bg-[#F7F7F7]">
                 {/* Header section */}

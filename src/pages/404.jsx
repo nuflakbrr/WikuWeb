@@ -1,12 +1,24 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import { Footer, Navbar } from "../components";
+import { Footer, Navbar, SEO } from "../components";
 
 export default function NotFound() {
+  // Setting SEO
+  const SEOPage = {
+    title: "Halaman Tidak Ditemukan",
+    description: "WIKUSAMA",
+    siteUrl: "https://wikusama.com",
+    ogType: "website",
+    ogImage: "https://wikusama.com/og.jpg",
+    twitter: "@wikusama",
+    twImage: "https://wikusama.com/tw.jpg",
+  }
+
   const navigate = useNavigate();
   return (
     <div className="bg-[#080809] min-h-screen">
+      <SEO title={SEOPage.title} description={SEOPage.description} siteUrl={SEOPage.siteUrl} ogType={SEOPage.ogType} ogImage={SEOPage.ogImage} twitter={SEOPage.twitter} twImage={SEOPage.twImage} />
       <Navbar />
       <section className="overflow-x-hidden">
         <div className="container">

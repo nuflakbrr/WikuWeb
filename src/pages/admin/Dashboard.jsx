@@ -3,10 +3,23 @@ import Navbar from "../../components/Admin/Navbar";
 import { CalendarIcon, BellIcon } from "@heroicons/react/outline";
 import ReportButton from "../../components/Admin/ReportButton";
 import NumberOf from "../../components/Admin/NumberOf";
+import { SEO } from "../../components";
 
 function Dashboard(props) {
+  // Setting SEO
+  const SEOPage = {
+    title: "Dasbor - WIKUSAMA",
+    description: "WIKUSAMA",
+    siteUrl: "https://wikusama.com",
+    ogType: "website",
+    ogImage: "https://wikusama.com/og.jpg",
+    twitter: "@wikusama",
+    twImage: "https://wikusama.com/tw.jpg",
+  }
+
   return (
     <div className="overflow-x-hidden">
+      <SEO title={SEOPage.title} description={SEOPage.description} siteUrl={SEOPage.siteUrl} ogType={SEOPage.ogType} ogImage={SEOPage.ogImage} twitter={SEOPage.twitter} twImage={SEOPage.twImage} />
       <Navbar />
       <div className="absolute right-0 bg-ghost-white w-[94vw] min-h-screen py-6 px-10">
         <section className="flex justify-between items-center mb-12">

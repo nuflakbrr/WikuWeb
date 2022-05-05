@@ -1,7 +1,7 @@
 import React from "react";
 import { SearchIcon, ChevronDownIcon } from "@heroicons/react/solid";
 
-import { Footer, Navbar, BiodataCard } from "../components";
+import { Footer, Navbar, BiodataCard, SEO } from "../components";
 
 const filter = [
   { name: "All", value: "all", selected: true },
@@ -11,8 +11,20 @@ const filter = [
 ];
 
 function Biodata(props) {
+  // Setting SEO
+  const SEOPage = {
+    title: "Biodata - WIKUSAMA",
+    description: "WIKUSAMA",
+    siteUrl: "https://wikusama.com",
+    ogType: "website",
+    ogImage: "https://wikusama.com/og.jpg",
+    twitter: "@wikusama",
+    twImage: "https://wikusama.com/tw.jpg",
+  }
+
   return (
     <>
+      <SEO title={SEOPage.title} description={SEOPage.description} siteUrl={SEOPage.siteUrl} ogType={SEOPage.ogType} ogImage={SEOPage.ogImage} twitter={SEOPage.twitter} twImage={SEOPage.twImage} />
       <Navbar />
       <div className="overflow-x-hidden bg-[#F7F7F7]">
         {/* Header section */}

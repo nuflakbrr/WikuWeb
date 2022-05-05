@@ -1,9 +1,22 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { SEO } from '../components'
 
 export default function Login() {
+    // Setting SEO
+    const SEOPage = {
+        title: "Masuk - WIKUSAMA",
+        description: "WIKUSAMA",
+        siteUrl: "https://wikusama.com",
+        ogType: "website",
+        ogImage: "https://wikusama.com/og.jpg",
+        twitter: "@wikusama",
+        twImage: "https://wikusama.com/tw.jpg",
+    }
+
     return (
         <div>
+            <SEO title={SEOPage.title} description={SEOPage.description} siteUrl={SEOPage.siteUrl} ogType={SEOPage.ogType} ogImage={SEOPage.ogImage} twitter={SEOPage.twitter} twImage={SEOPage.twImage} />
             <section>
                 <div className="container bg-[#F9F9F9]">
                     <div className="mx-auto">

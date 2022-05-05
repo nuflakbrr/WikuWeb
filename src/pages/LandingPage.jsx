@@ -1,12 +1,24 @@
 import React from "react";
 import { ArrowNarrowRightIcon, ArrowNarrowLeftIcon } from "@heroicons/react/solid";
 
-import { Footer, Navbar } from "../components";
+import { Footer, Navbar, SEO } from "../components";
 import { NavLink } from "react-router-dom";
 
 export default function LandingPage() {
+  // Setting SEO
+  const SEOPage = {
+    title: "WIKUSAMA",
+    description: "WIKUSAMA",
+    siteUrl: "https://wikusama.com",
+    ogType: "website",
+    ogImage: "https://wikusama.com/og.jpg",
+    twitter: "@wikusama",
+    twImage: "https://wikusama.com/tw.jpg",
+  }
+
   return (
     <>
+      <SEO title={SEOPage.title} description={SEOPage.description} siteUrl={SEOPage.siteUrl} ogType={SEOPage.ogType} ogImage={SEOPage.ogImage} twitter={SEOPage.twitter} twImage={SEOPage.twImage} />
       <Navbar />
       <div className="overflow-x-hidden">
         {/* Hero Section */}

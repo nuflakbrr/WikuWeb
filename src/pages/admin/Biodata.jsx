@@ -4,8 +4,20 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
 import TableRow from "../../components/Admin/TableRow";
 import ReportButton from "../../components/Admin/ReportButton";
 import HeaderSection from "../../components/Admin/HeaderSection";
+import { SEO } from "../../components";
 
 export default function Biodata(props) {
+  // Setting SEO
+  const SEOPage = {
+    title: "List Biodata - WIKUSAMA",
+    description: "WIKUSAMA",
+    siteUrl: "https://wikusama.com",
+    ogType: "website",
+    ogImage: "https://wikusama.com/og.jpg",
+    twitter: "@wikusama",
+    twImage: "https://wikusama.com/tw.jpg",
+  }
+
   const data = [
     {
       nama: "Michael Keaton",
@@ -62,6 +74,7 @@ export default function Biodata(props) {
   ];
   return (
     <div className="overflow-x-hidden">
+      <SEO title={SEOPage.title} description={SEOPage.description} siteUrl={SEOPage.siteUrl} ogType={SEOPage.ogType} ogImage={SEOPage.ogImage} twitter={SEOPage.twitter} twImage={SEOPage.twImage} />
       <Navbar />
       <div className="absolute right-0 bg-ghost-white w-[94vw] min-h-screen py-6 px-10">
         <HeaderSection

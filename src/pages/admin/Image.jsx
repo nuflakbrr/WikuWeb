@@ -2,12 +2,23 @@ import React from "react";
 import Navbar from "../../components/Admin/Navbar";
 import { PencilIcon, TrashIcon } from "@heroicons/react/solid";
 import HeaderSection from "../../components/Admin/HeaderSection";
+import { SEO } from "../../components";
 
 export default function Image(props) {
+  const SEOPage = {
+    title: "Managemen Galeri - WIKUSAMA",
+    description: "WIKUSAMA",
+    siteUrl: "https://wikusama.com",
+    ogType: "website",
+    ogImage: "https://wikusama.com/og.jpg",
+    twitter: "@wikusama",
+    twImage: "https://wikusama.com/tw.jpg",
+  }
+
   return (
     <div className="overflow-x-hidden">
+      <SEO title={SEOPage.title} description={SEOPage.description} siteUrl={SEOPage.siteUrl} ogType={SEOPage.ogType} ogImage={SEOPage.ogImage} twitter={SEOPage.twitter} twImage={SEOPage.twImage} />
       <Navbar />
-
       <div className="absolute right-0 bg-ghost-white w-[94vw] min-h-screen py-6 px-10">
         <HeaderSection
           title="Image management"
