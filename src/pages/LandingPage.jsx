@@ -1,8 +1,12 @@
 import React from "react";
-import { ArrowNarrowRightIcon, ArrowNarrowLeftIcon } from "@heroicons/react/solid";
+import {
+  ArrowNarrowRightIcon,
+  ArrowNarrowLeftIcon,
+} from "@heroicons/react/solid";
 
 import { Footer, Navbar, NavBeforeLogin, SEO } from "../components";
 import { NavLink } from "react-router-dom";
+import cookies from "../config/cookies";
 
 export default function LandingPage() {
   // Setting SEO
@@ -14,24 +18,30 @@ export default function LandingPage() {
     ogImage: "https://wikusama.com/og.jpg",
     twitter: "@wikusama",
     twImage: "https://wikusama.com/tw.jpg",
-  }
+  };
 
   // GET data from localStorage
-  const token = localStorage.getItem("token")
+  const token = cookies.getCookie();
 
   return (
     <>
-      <SEO title={SEOPage.title} description={SEOPage.description} siteUrl={SEOPage.siteUrl} ogType={SEOPage.ogType} ogImage={SEOPage.ogImage} twitter={SEOPage.twitter} twImage={SEOPage.twImage} />
+      <SEO
+        title={SEOPage.title}
+        description={SEOPage.description}
+        siteUrl={SEOPage.siteUrl}
+        ogType={SEOPage.ogType}
+        ogImage={SEOPage.ogImage}
+        twitter={SEOPage.twitter}
+        twImage={SEOPage.twImage}
+      />
       {/* Logical before login and after login here */}
-      {
-        token ? (
-          <>
-            <Navbar />
-          </>
-        ) : (
-          <NavBeforeLogin />
-        )
-      }
+      {token ? (
+        <>
+          <Navbar />
+        </>
+      ) : (
+        <NavBeforeLogin />
+      )}
       {/* Logical before login and after login End */}
       <div className="overflow-x-hidden">
         {/* Hero Section */}
@@ -192,22 +202,50 @@ export default function LandingPage() {
                     <div className="mt-10 flex flex-wrap">
                       <div className="w-full lg:w-1/2">
                         <div>
-                          <h2 className="font-bold text-[24px] leading-[28.8px] mb-2.5">Best IT curriculum</h2>
-                          <p className="text-[#B6B6B6]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dolor senectus cursus sagittis turpis condimentum. Dictum ut sociis in scelerisque quisque massa.</p>
+                          <h2 className="font-bold text-[24px] leading-[28.8px] mb-2.5">
+                            Best IT curriculum
+                          </h2>
+                          <p className="text-[#B6B6B6]">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Venenatis dolor senectus cursus sagittis
+                            turpis condimentum. Dictum ut sociis in scelerisque
+                            quisque massa.
+                          </p>
                         </div>
                         <div className="mt-5">
-                          <h2 className="font-bold text-[24px] leading-[28.8px] mb-2.5">Productive environment</h2>
-                          <p className="text-[#B6B6B6]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dolor senectus cursus sagittis turpis condimentum. Dictum ut sociis in scelerisque quisque massa.</p>
+                          <h2 className="font-bold text-[24px] leading-[28.8px] mb-2.5">
+                            Productive environment
+                          </h2>
+                          <p className="text-[#B6B6B6]">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Venenatis dolor senectus cursus sagittis
+                            turpis condimentum. Dictum ut sociis in scelerisque
+                            quisque massa.
+                          </p>
                         </div>
                       </div>
                       <div className="w-full lg:w-1/2">
                         <div>
-                          <h2 className="font-bold text-[24px] leading-[28.8px] mb-2.5">Complete facilities</h2>
-                          <p className="text-[#B6B6B6]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dolor senectus cursus sagittis turpis condimentum. Dictum ut sociis in scelerisque quisque massa.</p>
+                          <h2 className="font-bold text-[24px] leading-[28.8px] mb-2.5">
+                            Complete facilities
+                          </h2>
+                          <p className="text-[#B6B6B6]">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Venenatis dolor senectus cursus sagittis
+                            turpis condimentum. Dictum ut sociis in scelerisque
+                            quisque massa.
+                          </p>
                         </div>
                         <div className="mt-5">
-                          <h2 className="font-bold text-[24px] leading-[28.8px] mb-2.5">Best IT curriculum</h2>
-                          <p className="text-[#B6B6B6]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dolor senectus cursus sagittis turpis condimentum. Dictum ut sociis in scelerisque quisque massa.</p>
+                          <h2 className="font-bold text-[24px] leading-[28.8px] mb-2.5">
+                            Best IT curriculum
+                          </h2>
+                          <p className="text-[#B6B6B6]">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Venenatis dolor senectus cursus sagittis
+                            turpis condimentum. Dictum ut sociis in scelerisque
+                            quisque massa.
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -215,11 +253,21 @@ export default function LandingPage() {
                 </div>
                 <div className="w-full px-4 lg:w-1/2 mt-8 lg:mt-0">
                   <div className="bg-[#080809] -z-10 p-5">
-                    <h2 className="text-white text-right font-bold text-[40px] leading-[48px]">Dea Ivana</h2>
-                    <h4 className="text-white text-right font-medium text-[16px] leading-[19.2px]">Product designer at Shoope</h4>
-                    <h4 className="text-white text-right font-light text-[16px] leading-[19.2px]">Mokleters 21</h4>
+                    <h2 className="text-white text-right font-bold text-[40px] leading-[48px]">
+                      Dea Ivana
+                    </h2>
+                    <h4 className="text-white text-right font-medium text-[16px] leading-[19.2px]">
+                      Product designer at Shoope
+                    </h4>
+                    <h4 className="text-white text-right font-light text-[16px] leading-[19.2px]">
+                      Mokleters 21
+                    </h4>
                   </div>
-                  <img src="/AlumniWanita.png" alt="Alumni Wanita Image" className="lg:-mt-52 xl:-mb-28" />
+                  <img
+                    src="/AlumniWanita.png"
+                    alt="Alumni Wanita Image"
+                    className="lg:-mt-52 xl:-mb-28"
+                  />
                 </div>
               </div>
             </div>

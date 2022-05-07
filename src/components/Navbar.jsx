@@ -4,6 +4,8 @@ import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import "../index.css";
 import { Link } from "react-router-dom";
 
+import cookies from "../config/cookies";
+
 const navigation = [
   { name: "Home", href: "#", active: false },
   { name: "About", href: "#about", active: false },
@@ -21,15 +23,13 @@ function classNames(...classes) {
 
 export default function Navbar(props) {
   // GET data from localStorage
-  const account = JSON.parse(localStorage.getItem("account"))
+  const account = cookies.getDecodedCookie();
 
   // Logout
   const logOut = () => {
-    localStorage.removeItem('token')
-    localStorage.removeItem('account')
-    localStorage.removeItem('role')
-    window.location.href = '/'
-  }
+    cookies.removeCookie();
+    window.location.href = "/";
+  };
 
   return (
     <Disclosure as="nav" className="bg-[#080809]">
@@ -104,18 +104,34 @@ export default function Navbar(props) {
                       <Menu.Item>
                         {({ active }) => (
                           <>
-                            <Link to="/profile-dashboard" className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-gray-700"
-                            )}>Profile Dashboard</Link>
-                            <Link to="/settings" className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-gray-700"
-                            )}>Settings</Link>
-                            <Link to="/logout" onClick={logOut} className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-gray-700"
-                            )}>Logout</Link>
+                            <Link
+                              to="/profile-dashboard"
+                              className={classNames(
+                                active ? "bg-gray-100" : "",
+                                "block px-4 py-2 text-gray-700"
+                              )}
+                            >
+                              Profile Dashboard
+                            </Link>
+                            <Link
+                              to="/settings"
+                              className={classNames(
+                                active ? "bg-gray-100" : "",
+                                "block px-4 py-2 text-gray-700"
+                              )}
+                            >
+                              Settings
+                            </Link>
+                            <Link
+                              to="/logout"
+                              onClick={logOut}
+                              className={classNames(
+                                active ? "bg-gray-100" : "",
+                                "block px-4 py-2 text-gray-700"
+                              )}
+                            >
+                              Logout
+                            </Link>
                           </>
                         )}
                       </Menu.Item>
