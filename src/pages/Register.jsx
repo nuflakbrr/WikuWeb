@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
+import axios from 'axios'
 import { NavLink } from 'react-router-dom'
+
 import { SEO } from '../components'
 
 export default function Register() {
+    // Required State Register
+    const [username, setUsername] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
     // Setting SEO
     const SEOPage = {
         title: "Daftar - WIKUSAMA",
@@ -12,6 +19,31 @@ export default function Register() {
         ogImage: "https://wikusama.com/og.jpg",
         twitter: "@wikusama",
         twImage: "https://wikusama.com/tw.jpg",
+    }
+
+    // POST data from form
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+
+        const api = 'http://103.176.79.55:3000'
+
+        const data = {
+            username: username,
+            email: email,
+            password: password,
+        }
+
+        try {
+            const res = await axios.post(`${api}/register`, data)
+            if (res.data.message === "success") {
+                alert(res.data.message)
+                window.location.href = "/login"
+            } else {
+                alert(res.data.message)
+            }
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     return (
@@ -30,21 +62,21 @@ export default function Register() {
                                 </div>
 
                                 {/* Form */}
-                                <form>
+                                <form onSubmit={handleSubmit}>
                                     <div className="flex flex-col">
                                         <label htmlFor="username" className="font-semibold">Username</label>
-                                        <input type="text" name="username" id="username" className="mt-2 p-3 border-2 border-[#070708]" placeholder="Enter your username" />
+                                        <input type="text" name="username" id="username" className="mt-2 p-3 border-2 border-[#070708]" placeholder="Enter your username" value={username} onChange={(e) => setUsername(e.target.value)} />
                                     </div>
                                     <div className="flex flex-col mt-5">
                                         <label htmlFor="emregisterail" className="font-semibold">Email</label>
-                                        <input type="email" name="email" id="email" className="mt-2 p-3 border-2 border-[#070708]" placeholder="Enter your email" />
+                                        <input type="email" name="email" id="email" className="mt-2 p-3 border-2 border-[#070708]" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} />
                                     </div>
                                     <div className="flex flex-col mt-5">
                                         <label htmlFor="password" className="font-semibold">Password</label>
-                                        <input type="password" name="password" id="password" className="mt-2 p-3 border-2 border-[#070708]" placeholder="Enter your password" />
+                                        <input type="password" name="password" id="password" className="mt-2 p-3 border-2 border-[#070708]" placeholder="Enter your password" value={password} onChange={(e) => setPassword(e.target.value)} />
                                     </div>
                                     <div className="flex flex-col mt-5">
-                                        <button type="button" className="bg-[#070708] hover:bg-[#1f1f24] text-white font-bold py-3 px-4">Create Account</button>
+                                        <button type="submit" className="bg-[#070708] hover:bg-[#1f1f24] text-white font-bold py-3 px-4">Create Account</button>
                                     </div>
                                 </form>
 

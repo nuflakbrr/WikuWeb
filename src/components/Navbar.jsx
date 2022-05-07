@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import "../index.css";
+import { Link } from "react-router-dom";
 
 const navigation = [
   { name: "Home", href: "#", active: false },
@@ -11,7 +12,7 @@ const navigation = [
 const userMenu = [
   { name: "Profile dashboard", href: "#profile-dashboard" },
   { name: "Settings", href: "#settings" },
-  { name: "Log out", href: "#logout" },
+  { name: "Log out", href: "/logout" },
 ];
 
 function classNames(...classes) {
@@ -19,6 +20,17 @@ function classNames(...classes) {
 }
 
 export default function Navbar(props) {
+  // GET data from localStorage
+  const account = JSON.parse(localStorage.getItem("account"))
+
+  // Logout
+  const logOut = () => {
+    localStorage.removeItem('token')
+    localStorage.removeItem('account')
+    localStorage.removeItem('role')
+    window.location.href = '/'
+  }
+
   return (
     <Disclosure as="nav" className="bg-[#080809]">
       {({ open }) => (
@@ -70,7 +82,7 @@ export default function Navbar(props) {
                     <Menu.Button className="flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                       <span className="sr-only">Open user menu</span>
                       <h1 className="hidden sm:block text-white py-2 px-3 font-semibold">
-                        Andi Firman
+                        {account.username}
                       </h1>
                       <img
                         className="h-8 w-8 rounded-full"
@@ -89,21 +101,24 @@ export default function Navbar(props) {
                     leaveTo="transform opacity-0 scale-95"
                   >
                     <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none font-lato text-sm">
-                      {userMenu.map((item) => (
-                        <Menu.Item>
-                          {({ active }) => (
-                            <a
-                              href={item.href}
-                              className={classNames(
-                                active ? "bg-gray-100" : "",
-                                "block px-4 py-2 text-gray-700"
-                              )}
-                            >
-                              {item.name}
-                            </a>
-                          )}
-                        </Menu.Item>
-                      ))}
+                      <Menu.Item>
+                        {({ active }) => (
+                          <>
+                            <Link to="/profile-dashboard" className={classNames(
+                              active ? "bg-gray-100" : "",
+                              "block px-4 py-2 text-gray-700"
+                            )}>Profile Dashboard</Link>
+                            <Link to="/settings" className={classNames(
+                              active ? "bg-gray-100" : "",
+                              "block px-4 py-2 text-gray-700"
+                            )}>Settings</Link>
+                            <Link to="/logout" onClick={logOut} className={classNames(
+                              active ? "bg-gray-100" : "",
+                              "block px-4 py-2 text-gray-700"
+                            )}>Logout</Link>
+                          </>
+                        )}
+                      </Menu.Item>
                     </Menu.Items>
                   </Transition>
                 </Menu>

@@ -2,11 +2,12 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import "../index.css";
+import { Link } from "react-router-dom";
 
 const navigation = [
-    { name: "Home", href: "#", active: false },
-    { name: "About", href: "#about", active: false },
-    { name: "Login", href: "#login", active: false },
+    { name: "Home", href: "/", active: false },
+    { name: "About", href: "/about", active: false },
+    { name: "Login", href: "/login", active: false },
 ];
 
 function classNames(...classes) {
@@ -41,9 +42,9 @@ export default function NavBeforeLogin(props) {
                                 <div className="hidden sm:block sm:ml-6">
                                     <div className="flex space-x-4 font-lato text-sm font-medium">
                                         {navigation.map((item) => (
-                                            <a
+                                            <Link
                                                 key={item.name}
-                                                href={item.href}
+                                                to={item.href}
                                                 className={classNames(
                                                     item.active
                                                         ? "bg-[#F8BC37] text-white"
@@ -53,37 +54,15 @@ export default function NavBeforeLogin(props) {
                                                 aria-current={item.current ? "page" : undefined}
                                             >
                                                 {item.name}
-                                            </a>
+                                            </Link>
                                         ))}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <Disclosure.Panel className="sm:hidden">
-                        <div className="px-2 pt-2 pb-3 space-y-1 font-lato font-medium">
-                            {navigation.map((item) => (
-                                <Disclosure.Button
-                                    key={item.name}
-                                    as="a"
-                                    href={item.href}
-                                    className={classNames(
-                                        item.active
-                                            ? "bg-gray-900 text-white"
-                                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                                        "block px-3 py-2 rounded-md text-base"
-                                    )}
-                                    aria-current={item.active ? "page" : undefined}
-                                >
-                                    {item.name}
-                                </Disclosure.Button>
-                            ))}
-                        </div>
-                    </Disclosure.Panel>
                 </>
-            )
-            }
+            )}
         </Disclosure >
     );
 }

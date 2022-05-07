@@ -16,12 +16,22 @@ export default function LandingPage() {
     twImage: "https://wikusama.com/tw.jpg",
   }
 
+  // GET data from localStorage
+  const token = localStorage.getItem("token")
+
   return (
     <>
       <SEO title={SEOPage.title} description={SEOPage.description} siteUrl={SEOPage.siteUrl} ogType={SEOPage.ogType} ogImage={SEOPage.ogImage} twitter={SEOPage.twitter} twImage={SEOPage.twImage} />
       {/* Logical before login and after login here */}
-      <NavBeforeLogin />
-      {/* <Navbar /> */}
+      {
+        token ? (
+          <>
+            <Navbar />
+          </>
+        ) : (
+          <NavBeforeLogin />
+        )
+      }
       {/* Logical before login and after login End */}
       <div className="overflow-x-hidden">
         {/* Hero Section */}
