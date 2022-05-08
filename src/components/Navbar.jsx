@@ -11,12 +11,6 @@ const navigation = [
   { name: "About", href: "#about", active: false },
 ];
 
-const userMenu = [
-  { name: "Profile dashboard", href: "#profile-dashboard" },
-  { name: "Settings", href: "#settings" },
-  { name: "Log out", href: "/logout" },
-];
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -30,6 +24,9 @@ export default function Navbar(props) {
     cookies.removeCookie();
     window.location.href = "/";
   };
+
+  // Temporary GET user profile image
+  const userImage = `http://103.176.79.55:3000/${account.foto_profile}`
 
   return (
     <Disclosure as="nav" className="bg-[#080809]">
@@ -50,10 +47,12 @@ export default function Navbar(props) {
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-between">
                 <div className="flex-shrink-0 flex items-center text-slate-50 font-lato font-medium text-2xl">
-                  <h1 className="block lg:hidden h-8 w-auto">WIKU</h1>
-                  <h1 className="hidden lg:block h-8 w-auto font-bold">
-                    WIKUSAMA
-                  </h1>
+                  <Link to="/">
+                    <h1 className="block lg:hidden h-8 w-auto">WIKU</h1>
+                    <h1 className="hidden lg:block h-8 w-auto font-bold">
+                      WIKUSAMA
+                    </h1>
+                  </Link>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4 font-lato text-sm font-medium">
@@ -85,10 +84,15 @@ export default function Navbar(props) {
                         {account.username}
                       </h1>
                       <img
+                        className="h-8 w-8 object-cover rounded-full"
+                        src={userImage}
+                        alt="User Image Profile"
+                      />
+                      {/* <img
                         className="h-8 w-8 rounded-full"
                         src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                      />
+                        alt="User Image Profile"
+                      /> */}
                     </Menu.Button>
                   </div>
                   <Transition
@@ -105,22 +109,13 @@ export default function Navbar(props) {
                         {({ active }) => (
                           <>
                             <Link
-                              to="/profile-dashboard"
+                              to="/profile"
                               className={classNames(
                                 active ? "bg-gray-100" : "",
                                 "block px-4 py-2 text-gray-700"
                               )}
                             >
-                              Profile Dashboard
-                            </Link>
-                            <Link
-                              to="/settings"
-                              className={classNames(
-                                active ? "bg-gray-100" : "",
-                                "block px-4 py-2 text-gray-700"
-                              )}
-                            >
-                              Settings
+                              Edit Profile
                             </Link>
                             <Link
                               to="/logout"
