@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import cookies from "../config/cookies";
 
 import { Footer, Navbar, NavBeforeLogin, SEO } from "../components";
+import cookies from "../config/cookies";
 
 export default function NotFound() {
   // Setting SEO
@@ -43,7 +43,7 @@ export default function NotFound() {
                 </h1>
                 <h3 className="text-center text-white font-light text-[16px] md:text-[18px] leading-[24px] md:leading-[26px]">
                   We can’t find any page related to what you’re <br />
-                  looking for
+                  looking for.
                 </h3>
                 <div className="flex justify-center items-center my-4">
                   <button
