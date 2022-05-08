@@ -34,10 +34,12 @@ export default function NavBeforeLogin(props) {
                             </div>
                             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-between">
                                 <div className="flex-shrink-0 flex items-center text-slate-50 font-lato font-medium text-2xl">
-                                    <h1 className="block lg:hidden h-8 w-auto">WIKU</h1>
-                                    <h1 className="hidden lg:block h-8 w-auto font-bold">
-                                        WIKUSAMA
-                                    </h1>
+                                    <Link to="/">
+                                        <h1 className="block lg:hidden h-8 w-auto">WIKU</h1>
+                                        <h1 className="hidden lg:block h-8 w-auto font-bold">
+                                            WIKUSAMA
+                                        </h1>
+                                    </Link>
                                 </div>
                                 <div className="hidden sm:block sm:ml-6">
                                     <div className="flex space-x-4 font-lato text-sm font-medium">
@@ -61,6 +63,27 @@ export default function NavBeforeLogin(props) {
                             </div>
                         </div>
                     </div>
+
+                    <Disclosure.Panel className="sm:hidden">
+                        <div className="px-2 pt-2 pb-3 space-y-1 font-lato font-medium">
+                            {navigation.map((item) => (
+                                <Disclosure.Button
+                                    key={item.name}
+                                    as="a"
+                                    href={item.href}
+                                    className={classNames(
+                                        item.active
+                                            ? "bg-gray-900 text-white"
+                                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                                        "block px-3 py-2 rounded-md text-base"
+                                    )}
+                                    aria-current={item.active ? "page" : undefined}
+                                >
+                                    {item.name}
+                                </Disclosure.Button>
+                            ))}
+                        </div>
+                    </Disclosure.Panel>
                 </>
             )}
         </Disclosure >

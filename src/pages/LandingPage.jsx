@@ -3,10 +3,10 @@ import {
   ArrowNarrowRightIcon,
   ArrowNarrowLeftIcon,
 } from "@heroicons/react/solid";
-
-import { Footer, Navbar, NavBeforeLogin, SEO } from "../components";
 import { NavLink } from "react-router-dom";
 import cookies from "../config/cookies";
+
+import { Footer, Navbar, NavBeforeLogin, SEO } from "../components";
 
 export default function LandingPage() {
   // Setting SEO
@@ -34,6 +34,7 @@ export default function LandingPage() {
         twitter={SEOPage.twitter}
         twImage={SEOPage.twImage}
       />
+
       {/* Logical before login and after login here */}
       {token ? (
         <>
@@ -43,6 +44,7 @@ export default function LandingPage() {
         <NavBeforeLogin />
       )}
       {/* Logical before login and after login End */}
+
       <div className="overflow-x-hidden">
         {/* Hero Section */}
         <section>
