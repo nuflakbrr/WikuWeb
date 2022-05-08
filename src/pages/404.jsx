@@ -1,7 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import cookies from "../config/cookies";
 
-import { Footer, Navbar, SEO } from "../components";
+import { Footer, Navbar, NavBeforeLogin, SEO } from "../components";
 
 export default function NotFound() {
   // Setting SEO
@@ -15,11 +16,22 @@ export default function NotFound() {
     twImage: "https://wikusama.com/tw.jpg",
   }
 
+  // GET data from localStorage
+  const token = cookies.getCookie();
+
   const navigate = useNavigate();
   return (
     <div className="bg-[#080809] min-h-screen">
       <SEO title={SEOPage.title} description={SEOPage.description} siteUrl={SEOPage.siteUrl} ogType={SEOPage.ogType} ogImage={SEOPage.ogImage} twitter={SEOPage.twitter} twImage={SEOPage.twImage} />
-      <Navbar />
+      {/* Logical before login and after login here */}
+      {token ? (
+        <>
+          <Navbar />
+        </>
+      ) : (
+        <NavBeforeLogin />
+      )}
+      {/* Logical before login and after login End */}
       <section className="overflow-x-hidden">
         <div className="container">
           <div className="flex flex-wrap">
