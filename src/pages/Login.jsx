@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "../config/axios";
 import cookies from "../config/cookies";
 import { useForm } from "react-hook-form";
@@ -7,6 +7,7 @@ import { NavLink } from "react-router-dom";
 import { SEO } from "../components";
 
 export default function Login() {
+  const [loginError, setLoginError] = useState(false);
   // Setting SEO
   const SEOPage = {
     title: "Masuk - WIKUSAMA",
@@ -29,14 +30,14 @@ export default function Login() {
 
     try {
       const res = await axios.post("/login", body);
-      if (res.data) {
+      if (res.data.status == "error") {
+        throw new Error(res.data.status);
+      } else if (res.data) {
         cookies.createCookie(res.data.acces_token);
         window.location.href = "/";
-      } else {
-        alert(res.data);
       }
     } catch (error) {
-      console.log(error);
+      setLoginError(true);
     }
   };
 
@@ -79,7 +80,7 @@ export default function Login() {
                       id="email"
                       className="mt-2 p-3 border-2 border-[#070708]"
                       placeholder="Enter your email"
-                      {...register("email")}
+                      {...register("email", { required: true })}
                     />
                   </div>
                   <div className="flex flex-col mt-5">
@@ -92,7 +93,7 @@ export default function Login() {
                       id="password"
                       className="mt-2 p-3 border-2 border-[#070708]"
                       placeholder="Enter your password"
-                      {...register("password")}
+                      {...register("password", { required: true })}
                     />
                   </div>
                   <div className="flex items-center justify-between mt-5">
@@ -109,6 +110,11 @@ export default function Login() {
                     </div>
                   </div>
                   <div className="flex flex-col mt-5">
+                    {loginError && (
+                      <div className="bg-red-300 mb-3 p-4 text-red-800">
+                        Invalid login, please try again!
+                      </div>
+                    )}
                     <button
                       type="submit"
                       className="bg-[#070708] hover:bg-[#1f1f24] text-white font-bold py-3 px-4"

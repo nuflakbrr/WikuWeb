@@ -11,12 +11,6 @@ const navigation = [
   { name: "About", href: "#about", active: false },
 ];
 
-const userMenu = [
-  { name: "Profile dashboard", href: "#profile-dashboard" },
-  { name: "Settings", href: "#settings" },
-  { name: "Log out", href: "/logout" },
-];
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -105,7 +99,7 @@ export default function Navbar(props) {
                         {({ active }) => (
                           <>
                             <Link
-                              to="/profile-dashboard"
+                              to="/profile"
                               className={classNames(
                                 active ? "bg-gray-100" : "",
                                 "block px-4 py-2 text-gray-700"
