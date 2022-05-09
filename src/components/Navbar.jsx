@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 import cookies from "../config/cookies";
 
 const navigation = [
-  { name: "Home", href: "#", active: false },
-  { name: "About", href: "#about", active: false },
+  { name: "Home", href: "/", active: false },
+  { name: "About", href: "/about", active: false },
 ];
 
 function classNames(...classes) {
@@ -57,9 +57,9 @@ export default function Navbar(props) {
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4 font-lato text-sm font-medium">
                     {navigation.map((item) => (
-                      <a
+                      <Link
                         key={item.name}
-                        href={item.href}
+                        to={item.href}
                         className={classNames(
                           item.active
                             ? "bg-[#F8BC37] text-white"
@@ -69,7 +69,7 @@ export default function Navbar(props) {
                         aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -149,10 +149,9 @@ export default function Navbar(props) {
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 font-lato font-medium">
               {navigation.map((item) => (
-                <Disclosure.Button
+                <Link
                   key={item.name}
-                  as="a"
-                  href={item.href}
+                  to={item.href}
                   className={classNames(
                     item.active
                       ? "bg-gray-900 text-white"
@@ -162,7 +161,7 @@ export default function Navbar(props) {
                   aria-current={item.active ? "page" : undefined}
                 >
                   {item.name}
-                </Disclosure.Button>
+                </Link>
               ))}
             </div>
           </Disclosure.Panel>

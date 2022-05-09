@@ -67,10 +67,9 @@ export default function NavBeforeLogin(props) {
                     <Disclosure.Panel className="sm:hidden">
                         <div className="px-2 pt-2 pb-3 space-y-1 font-lato font-medium">
                             {navigation.map((item) => (
-                                <Disclosure.Button
+                                <Link
                                     key={item.name}
-                                    as="a"
-                                    href={item.href}
+                                    to={item.href}
                                     className={classNames(
                                         item.active
                                             ? "bg-gray-900 text-white"
@@ -80,7 +79,7 @@ export default function NavBeforeLogin(props) {
                                     aria-current={item.active ? "page" : undefined}
                                 >
                                     {item.name}
-                                </Disclosure.Button>
+                                </Link>
                             ))}
                         </div>
                     </Disclosure.Panel>
