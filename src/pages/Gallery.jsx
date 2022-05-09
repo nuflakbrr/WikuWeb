@@ -8,7 +8,7 @@ import BlockPage from './BlockPage';
 export default function Gallery() {
     // Setting SEO
     const SEOPage = {
-        title: "Galeri - WIKUSAMA",
+        title: "Galeri Reuni - WIKUSAMA",
         description: "WIKUSAMA",
         siteUrl: "https://wikusama.com",
         ogType: "website",

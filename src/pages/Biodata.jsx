@@ -15,7 +15,7 @@ const filter = [
 function Biodata(props) {
   // Setting SEO
   const SEOPage = {
-    title: "Biodata - WIKUSAMA",
+    title: "Biodata Alumni - WIKUSAMA",
     description: "WIKUSAMA",
     siteUrl: "https://wikusama.com",
     ogType: "website",
