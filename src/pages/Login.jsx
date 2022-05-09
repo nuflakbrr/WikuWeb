@@ -41,6 +41,24 @@ export default function Login() {
     }
   };
 
+  // Function Remember Me
+  const onRememberMe = (e) => {
+    if (e.target.checked) {
+      cookies.createCookie(res.data.acces_token);
+    } else {
+      cookies.deleteCookie();
+    }
+  }
+
+  // Load Cookies Remember Me if exist
+  function loadCookies() {
+    if (cookies.getCookie() > 0) {
+      window.location.href = "/";
+    } else {
+      return null;
+    }
+  }
+
   return (
     <div>
       <SEO
@@ -53,6 +71,7 @@ export default function Login() {
         twImage={SEOPage.twImage}
       />
       <section>
+        {loadCookies()}
         <div className="container bg-[#F9F9F9]">
           <div className="mx-auto">
             <div className="flex flex-wrap">
@@ -98,7 +117,7 @@ export default function Login() {
                   </div>
                   <div className="flex items-center justify-between mt-5">
                     <div className="flex items-center">
-                      <input type="checkbox" name="remember" id="remember" />
+                      <input type="checkbox" name="remember" id="remember" onClick={onRememberMe} />
                       <label htmlFor="remember" className="ml-2 text-sm">
                         Remember me
                       </label>
