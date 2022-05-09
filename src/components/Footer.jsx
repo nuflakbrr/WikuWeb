@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
     const year = new Date().getFullYear()
@@ -10,8 +11,8 @@ export default function Footer() {
                     <div className="flex flex-wrap">
                         {/* Logo */}
                         <div className="w-full px-4 mb-12 md:w-1/5">
-                            <h2 className="font-bold text-[34px] text-white">
-                                Logo
+                            <h2 className="font-bold text-[30px] text-white">
+                                WIKUSAMA
                             </h2>
                         </div>
                         {/* Logo End */}
@@ -23,16 +24,16 @@ export default function Footer() {
                             </h2>
                             <ul>
                                 <li>
-                                    <a href="#" className='inline-block text-base text-slate-300 hover:text-zinc-50'>Home</a>
+                                    <Link to="/" className='inline-block text-base text-slate-300 hover:text-zinc-50'>Home</Link>
                                 </li>
                                 <li>
-                                    <a href="#" className='inline-block text-base text-slate-300 hover:text-zinc-50'>About</a>
+                                    <Link to="/about" className='inline-block text-base text-slate-300 hover:text-zinc-50'>About</Link>
                                 </li>
                                 <li>
-                                    <a href="#" className='inline-block text-base text-slate-300 hover:text-zinc-50'>Developers</a>
+                                    <Link to="/developers" className='inline-block text-base text-slate-300 hover:text-zinc-50'>Developers</Link>
                                 </li>
                                 <li>
-                                    <a href="#" className='inline-block text-base text-slate-300 hover:text-zinc-50'>Alumni</a>
+                                    <Link to="/alumni" className='inline-block text-base text-slate-300 hover:text-zinc-50'>Alumni</Link>
                                 </li>
                             </ul>
                         </div>
@@ -45,13 +46,13 @@ export default function Footer() {
                             </h2>
                             <ul>
                                 <li>
-                                    <a href="#" className='inline-block text-base text-slate-300 hover:text-zinc-50'>Instagram</a>
+                                    <a href="#" target="_blank" className='inline-block text-base text-slate-300 hover:text-zinc-50'>Instagram</a>
                                 </li>
                                 <li>
-                                    <a href="#" className='inline-block text-base text-slate-300 hover:text-zinc-50'>Twitter</a>
+                                    <a href="#" target="_blank" className='inline-block text-base text-slate-300 hover:text-zinc-50'>Twitter</a>
                                 </li>
                                 <li>
-                                    <a href="#" className='inline-block text-base text-slate-300 hover:text-zinc-50'>TikTok</a>
+                                    <a href="#" target="_blank" className='inline-block text-base text-slate-300 hover:text-zinc-50'>TikTok</a>
                                 </li>
                             </ul>
                         </div>
@@ -64,10 +65,10 @@ export default function Footer() {
                             </h2>
                             <ul>
                                 <li>
-                                    <a href="#" className='inline-block text-base text-slate-300 hover:text-zinc-50'>WhatsApp</a>
+                                    <a href="#" target="_blank" className='inline-block text-base text-slate-300 hover:text-zinc-50'>WhatsApp</a>
                                 </li>
                                 <li>
-                                    <a href="#" className='inline-block text-base text-slate-300 hover:text-zinc-50'>LinkedIn</a>
+                                    <a href="#" target="_blank" className='inline-block text-base text-slate-300 hover:text-zinc-50'>LinkedIn</a>
                                 </li>
                             </ul>
                         </div>
@@ -78,7 +79,7 @@ export default function Footer() {
                             <div className="flex">
 
                                 {/* Instagram */}
-                                <a href="#">
+                                <a href="#" target="_blank">
                                     <span className="mr-3 flex h-9 w-9 items-center justify-center rounded-full bg-[#222326] text-slate-100 hover:bg-[#323337] hover:text-zinc-50">
                                         <svg
                                             role="img"
@@ -94,7 +95,7 @@ export default function Footer() {
                                 </a>
 
                                 {/* Twitter */}
-                                <a href="#">
+                                <a href="#" target="_blank">
                                     <span className="mr-3 flex h-9 w-9 items-center justify-center rounded-full bg-[#222326] text-slate-100 hover:bg-[#323337] hover:text-zinc-50">
                                         <svg
                                             role="img"
@@ -110,7 +111,7 @@ export default function Footer() {
                                 </a>
 
                                 {/* TikTok */}
-                                <a href="#">
+                                <a href="#" target="_blank">
                                     <span className="mr-3 flex h-9 w-9 items-center justify-center rounded-full bg-[#222326] text-slate-100 hover:bg-[#323337] hover:text-zinc-50">
                                         <svg
                                             role="img"
