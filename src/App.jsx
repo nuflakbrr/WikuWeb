@@ -9,6 +9,7 @@ import {
   Biodata,
   Profile,
   Gallery,
+  ForgotPassword,
 } from "./pages";
 
 import {
@@ -24,6 +25,7 @@ function App() {
       <Route path="/" element={<LandingPage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/biodata" element={<Biodata />} />
       <Route path="/profile/*" element={<Profile />} />
       <Route path="/gallery" element={<Gallery />} />
