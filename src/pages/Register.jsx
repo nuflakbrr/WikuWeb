@@ -87,9 +87,8 @@ export default function Register() {
                   <div className="flex flex-col mt-5">
                     <label
                       htmlFor="email"
-                      className={`font-semibold ${
-                        errors.email && "text-red-600"
-                      }`}
+                      className={`font-semibold ${errors.email && "text-red-600"
+                        }`}
                     >
                       Email
                     </label>
@@ -97,9 +96,8 @@ export default function Register() {
                       type="text"
                       name="email"
                       id="email"
-                      className={`mt-2 p-3 border-2 border-[#070708] ${
-                        errors.email && "border-red-600"
-                      }`}
+                      className={`mt-2 p-3 border-2 border-[#070708] ${errors.email && "border-red-600"
+                        }`}
                       placeholder="Enter your email"
                       {...register("email", {
                         required: true,
@@ -114,9 +112,8 @@ export default function Register() {
                   <div className="flex flex-col mt-5">
                     <label
                       htmlFor="password"
-                      className={`font-semibold ${
-                        errors.password && "text-red-600"
-                      }`}
+                      className={`font-semibold ${errors.password && "text-red-600"
+                        }`}
                     >
                       Password
                     </label>
@@ -125,9 +122,8 @@ export default function Register() {
                       name="password"
                       id="password"
                       maxLength={20}
-                      className={`mt-2 p-3 border-2 border-[#070708] ${
-                        errors.password && "border-red-600"
-                      }`}
+                      className={`mt-2 p-3 border-2 border-[#070708] ${errors.password && "border-red-600"
+                        }`}
                       placeholder="Enter your password"
                       {...register("password", {
                         required: true,
@@ -155,7 +151,7 @@ export default function Register() {
                   </div>
                 </form>
 
-                {/* Sign Up */}
+                {/* Sign In */}
                 <div className="flex items-center justify-center mt-5">
                   <p className="text-sm text-center">Already have account ?</p>
                   <NavLink
