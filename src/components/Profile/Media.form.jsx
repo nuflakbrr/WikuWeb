@@ -4,7 +4,20 @@ import { CloudUploadIcon, XCircleIcon } from "@heroicons/react/outline";
 import { useForm } from "react-hook-form";
 import { SocialIcon } from "react-social-icons";
 
+import SEO from "../SEO";
+
 export default function MediaForm(props) {
+  // Setting SEO
+  const SEOPage = {
+    title: "Unggah Media - WIKUSAMA",
+    description: "WIKUSAMA",
+    siteUrl: "https://wikusama.com",
+    ogType: "website",
+    ogImage: "https://wikusama.com/og.jpg",
+    twitter: "@wikusama",
+    twImage: "https://wikusama.com/tw.jpg",
+  }
+
   const [file, setFile] = useState(null);
 
   const {
@@ -36,6 +49,7 @@ export default function MediaForm(props) {
 
   return (
     <div className="bg-[#F9F9F9] pb-16">
+      <SEO title={SEOPage.title} description={SEOPage.description} siteUrl={SEOPage.siteUrl} ogType={SEOPage.ogType} ogImage={SEOPage.ogImage} twitter={SEOPage.twitter} twImage={SEOPage.twImage} />
       <form
         action="#"
         className="w-4/5 mx-auto"

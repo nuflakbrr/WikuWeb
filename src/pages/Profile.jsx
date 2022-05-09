@@ -13,17 +13,6 @@ import { Navbar, Footer, ProfileForm, PasswordForm, SEO } from "../components";
 import MediaForm from "../components/Profile/Media.form";
 
 function Profile(props) {
-  // Setting SEO
-  const SEOPage = {
-    title: "Profil - WIKUSAMA",
-    description: "WIKUSAMA",
-    siteUrl: "https://wikusama.com",
-    ogType: "website",
-    ogImage: "https://wikusama.com/og.jpg",
-    twitter: "@wikusama",
-    twImage: "https://wikusama.com/tw.jpg",
-  }
-
   // GET data from localStorage
   const account = cookies.getDecodedCookie();
 
@@ -32,7 +21,6 @@ function Profile(props) {
 
   return (
     <>
-      <SEO title={SEOPage.title} description={SEOPage.description} siteUrl={SEOPage.siteUrl} ogType={SEOPage.ogType} ogImage={SEOPage.ogImage} twitter={SEOPage.twitter} twImage={SEOPage.twImage} />
       <Navbar />
       <div className="overflow-x-hidden">
         {/* Profile section */}

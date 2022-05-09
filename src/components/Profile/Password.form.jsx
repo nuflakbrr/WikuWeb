@@ -1,7 +1,20 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
+import SEO from "../SEO";
+
 export default function Password(props) {
+  // Setting SEO
+  const SEOPage = {
+    title: "Edit Kata Sandi - WIKUSAMA",
+    description: "WIKUSAMA",
+    siteUrl: "https://wikusama.com",
+    ogType: "website",
+    ogImage: "https://wikusama.com/og.jpg",
+    twitter: "@wikusama",
+    twImage: "https://wikusama.com/tw.jpg",
+  }
+
   const {
     handleSubmit,
     register,
@@ -15,6 +28,7 @@ export default function Password(props) {
 
   return (
     <div>
+      <SEO title={SEOPage.title} description={SEOPage.description} siteUrl={SEOPage.siteUrl} ogType={SEOPage.ogType} ogImage={SEOPage.ogImage} twitter={SEOPage.twitter} twImage={SEOPage.twImage} />
       <form
         action="#"
         onSubmit={handleSubmit(onSubmit)}
