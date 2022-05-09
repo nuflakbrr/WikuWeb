@@ -26,7 +26,7 @@ export default function Navbar(props) {
   };
 
   // Temporary GET user profile image
-  const userImage = `http://103.176.79.55:3000/${account.foto_profile}`
+  const userImage = `http://103.176.79.55:3000/${account.foto_profile}`;
 
   return (
     <Disclosure as="nav" className="bg-[#080809]">
@@ -110,6 +110,15 @@ export default function Navbar(props) {
                           <>
                             <Link
                               to="/profile"
+                              className={classNames(
+                                active ? "bg-gray-100" : "",
+                                "block px-4 py-2 text-gray-700"
+                              )}
+                            >
+                              Profile Dashboard
+                            </Link>
+                            <Link
+                              to="/settings"
                               className={classNames(
                                 active ? "bg-gray-100" : "",
                                 "block px-4 py-2 text-gray-700"

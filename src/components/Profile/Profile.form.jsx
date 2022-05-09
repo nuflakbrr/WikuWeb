@@ -8,10 +8,8 @@ export default function Profile(props) {
   const account = cookies.getDecodedCookie();
 
   // Temporary GET user profile image
-  const userImage = `http://103.176.79.55:3000/${account.foto_profile}`
-
-  const [source, setSource] = useState(
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+  const [userimageSource, setSource] = useState(
+    `http://103.176.79.55:3000/${account.foto_profile}`
   );
 
   const {
@@ -126,12 +124,11 @@ export default function Profile(props) {
           </label>
 
           <div className="flex justify-between grow">
-            {/* <div
-              className={`w-[6rem] h-[6rem] rounded-full bg-cover bg-center`}
-              style={{ backgroundImage: `url(${source})` }}
+            <div
+              className={`w-[6rem] h-[6rem] rounded-full bg-cover bg-center border-2 border-black`}
+              style={{ backgroundImage: `url(${userimageSource})` }}
               id="profile-picture-preview"
-            /> */}
-            <img src={userImage} alt="User Profile Image" className="`w-[6rem] h-[6rem] rounded-full object-cover object-center" id="profile-picture-preview" />
+            />
             <div className="flex flex-row-reverse gap-6 items-center">
               <div className="relative bg-black text-white flex justify-center items-center h-10 w-[6rem] shadow-lg cursor-pointer">
                 <div className="absolute">
