@@ -104,9 +104,9 @@ export default function Login() {
                       </label>
                     </div>
                     <div className="flex">
-                      <a href="#" className="text-sm">
+                      <NavLink to="/forgot-password" className="text-sm">
                         Forgot password ?
-                      </a>
+                      </NavLink>
                     </div>
                   </div>
                   <div className="flex flex-col mt-5">
