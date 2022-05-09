@@ -11,7 +11,7 @@ export default function ForgotPassword() {
   const [loginError, setLoginError] = useState(false);
   // Setting SEO
   const SEOPage = {
-    title: "Perbaharui Password - WIKUSAMA",
+    title: "Perbarui Kata Sandi - WIKUSAMA",
     description: "WIKUSAMA",
     siteUrl: "https://wikusama.com",
     ogType: "website",
