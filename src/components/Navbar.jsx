@@ -115,16 +115,7 @@ export default function Navbar(props) {
                                 "block px-4 py-2 text-gray-700"
                               )}
                             >
-                              Profile Dashboard
-                            </Link>
-                            <Link
-                              to="/settings"
-                              className={classNames(
-                                active ? "bg-gray-100" : "",
-                                "block px-4 py-2 text-gray-700"
-                              )}
-                            >
-                              Edit Profile
+                              Profile
                             </Link>
                             <Link
                               to="/logout"
