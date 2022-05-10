@@ -13,6 +13,7 @@ import {
 } from "./pages";
 
 import {
+  AdminLogin,
   Dashboard,
   Biodata as BiodataAdmin,
   EditBiodata,
@@ -30,6 +31,7 @@ function App() {
       <Route path="/profile/*" element={<Profile />} />
       <Route path="/gallery" element={<Gallery />} />
       <Route path="/admin" element={<Dashboard />} />
+      <Route path="/admin/login" element={<AdminLogin />} />
       <Route path="/admin/biodata" element={<BiodataAdmin />} />
       <Route path="/admin/biodata/edit/:idUser" element={<EditBiodata />} />
       <Route path="/admin/image" element={<Image />} />
