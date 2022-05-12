@@ -65,14 +65,15 @@ export default function Profile(props) {
   useEffect(async () => {
     if (domicile.provinsi.length == 0) {
       const res = await axios.get("/alamat/provinsi");
-      setDomicile({ provinsi: res.data, kota: [] });
+      setDomicile({ ...domicile, provinsi: res.data });
     }
   });
 
   useEffect(async () => {
     if (watch("provinsi") != "null") {
+      setValue("kota", "null");
       const res = await axios.get(`/alamat/kota/${watch("provinsi")}`);
-      setDomicile({ provinsi: [...domicile.provinsi], kota: res.data });
+      setDomicile({ ...domicile, kota: res.data });
     }
   }, [watch("provinsi")]);
 
@@ -321,9 +322,10 @@ export default function Profile(props) {
                 {...register("kota")}
               >
                 <option value="null">Kota</option>
-                {domicile.kota.map((item) => (
-                  <option value={item.id}>{item.nama}</option>
-                ))}
+                {watch("provinsi") != "null" &&
+                  domicile.kota.map((item) => (
+                    <option value={item.id}>{item.nama}</option>
+                  ))}
               </select>
             </div>
           </div>
