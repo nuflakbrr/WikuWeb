@@ -29,7 +29,7 @@ export default function Navbar(props) {
   const userImage = `http://103.176.79.55:3000/${account.foto_profile}`;
 
   return (
-    <Disclosure as="nav" className="bg-[#080809]">
+    <Disclosure as="nav" className="bg-[#080809] lg:h-[8vh]">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">

@@ -50,7 +50,7 @@ export default function LandingPage() {
         <section>
           <div className="container">
             <div className="flex flex-wrap">
-              <div className="flex-shrink-0 bg-cover bg-center w-[100vw] h-[24rem] sm:h-[24rem] items-center bg-[url('/LandingPage.png')] px-4">
+              <div className="flex-shrink-0 bg-cover bg-center w-[100vw] h-[24rem] sm:h-[24rem] lg:h-[44vh] items-center bg-[url('/LandingPage.png')] px-4">
                 <div className="mt-24 md:mt-20">
                   <h1 className="text-center text-white font-bold text-[32px] md:text-[56px] leading-[40px] md:leading-[60px]">
                     Ikatan Alumni <br />
@@ -70,8 +70,8 @@ export default function LandingPage() {
         {/* Greetings Section */}
         <section>
           <div className="container w-full">
-            <div className="bg-[#080809]">
-              <div className="flex flex-col lg:flex-row max-w-7xl mx-auto">
+            <div className="bg-[#080809] lg:h-[48vh] w-screen">
+              <div className="flex flex-col lg:flex-row mx-auto h-full">
                 <div className="w-full px-4 flex justify-end items-center text-right">
                   <p className="text-white">
                     I am proud of my students who have graduated and who are
@@ -91,9 +91,7 @@ export default function LandingPage() {
                     </h2>
                   </div>
                 </div>
-                <div className="w-full">
-                  <img src="/KepalaSekolah.png" alt="Kepala Sekolah Image" />
-                </div>
+                <div className="bg-[url('/KepalaSekolah.png')] h-full w-full bg-contain bg-no-repeat bg-center" />
               </div>
             </div>
           </div>
