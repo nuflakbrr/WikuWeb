@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 
 import cookies from "../../config/cookies";
+import axios from "../../config/axios";
 import SEO from "../SEO";
 
 export default function Profile(props) {
@@ -29,6 +30,7 @@ export default function Profile(props) {
     register,
     setValue,
     formState: { errors },
+    watch,
   } = useForm();
 
   const handleFile = (e) => {
@@ -57,6 +59,24 @@ export default function Profile(props) {
   const onSubmit = (data) => {
     console.log(data);
   };
+
+  const [domicile, setDomicile] = useState({ provinsi: [], kota: [] });
+
+  useEffect(async () => {
+    if (domicile.provinsi.length == 0) {
+      const res = await axios.get("/alamat/provinsi");
+      setDomicile({ provinsi: res.data, kota: [] });
+    }
+  });
+
+  useEffect(async () => {
+    if (watch("provinsi") != "null") {
+      const res = await axios.get(`/alamat/kota/${watch("provinsi")}`);
+      setDomicile({ provinsi: [...domicile.provinsi], kota: res.data });
+    }
+  }, [watch("provinsi")]);
+
+  console.log(domicile);
 
   return (
     <>
@@ -287,15 +307,23 @@ export default function Profile(props) {
                 name="provinsi"
                 id="provinsi"
                 className="w-1/2 p-2 bg-white shadow-lg outline-none"
+                {...register("provinsi")}
               >
-                <option value="provinsi">Provinsi</option>
+                <option value="null">Provinsi</option>
+                {domicile.provinsi.map((item) => (
+                  <option value={item.id}>{item.nama}</option>
+                ))}
               </select>
               <select
                 name="kota"
                 id="kota"
                 className="w-1/2 p-2 bg-white shadow-lg outline-none"
+                {...register("kota")}
               >
-                <option value="kota">Kota</option>
+                <option value="null">Kota</option>
+                {domicile.kota.map((item) => (
+                  <option value={item.id}>{item.nama}</option>
+                ))}
               </select>
             </div>
           </div>
