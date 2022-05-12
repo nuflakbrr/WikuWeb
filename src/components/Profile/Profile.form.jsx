@@ -282,6 +282,7 @@ export default function Profile(props) {
               Hometown / domicile
             </label>
             <div className="grow flex gap-2">
+              {/* Select provinsi & kota */}
               <select
                 name="provinsi"
                 id="provinsi"
