@@ -14,7 +14,7 @@ export default function Profile(props) {
     ogImage: "https://wikusama.com/og.jpg",
     twitter: "@wikusama",
     twImage: "https://wikusama.com/tw.jpg",
-  }
+  };
 
   // GET data from localStorage
   const account = cookies.getDecodedCookie();
@@ -60,7 +60,15 @@ export default function Profile(props) {
 
   return (
     <>
-      <SEO title={SEOPage.title} description={SEOPage.description} siteUrl={SEOPage.siteUrl} ogType={SEOPage.ogType} ogImage={SEOPage.ogImage} twitter={SEOPage.twitter} twImage={SEOPage.twImage} />
+      <SEO
+        title={SEOPage.title}
+        description={SEOPage.description}
+        siteUrl={SEOPage.siteUrl}
+        ogType={SEOPage.ogType}
+        ogImage={SEOPage.ogImage}
+        twitter={SEOPage.twitter}
+        twImage={SEOPage.twImage}
+      />
       <form
         action="#"
         onSubmit={handleSubmit(onSubmit)}
@@ -273,15 +281,22 @@ export default function Profile(props) {
             <label htmlFor="domicile" className="w-1/3 font-semibold">
               Hometown / domicile
             </label>
-            <input
-              name="domicile"
-              id="domicile"
-              type="text"
-              className="grow outline outline-1 outline-[#070708] p-2 bg-transparent"
-              placeholder="Fill here"
-              value={account.domicile}
-              {...register("domicile")}
-            />
+            <div className="grow flex gap-2">
+              <select
+                name="provinsi"
+                id="provinsi"
+                className="w-1/2 p-2 bg-white shadow-lg outline-none"
+              >
+                <option value="provinsi">Provinsi</option>
+              </select>
+              <select
+                name="kota"
+                id="kota"
+                className="w-1/2 p-2 bg-white shadow-lg outline-none"
+              >
+                <option value="kota">Kota</option>
+              </select>
+            </div>
           </div>
         </div>
       </form>
