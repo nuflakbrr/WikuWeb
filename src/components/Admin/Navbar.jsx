@@ -17,6 +17,7 @@ function Navbar(props) {
   if (admin.role !== 'admin') {
     alert('Anda tidak memiliki akses ke halaman ini')
     window.location.href = '/'
+    document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/admin;"
   }
 
   // logout function
