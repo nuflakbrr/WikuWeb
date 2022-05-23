@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import axios from "../../config/axios";
-import cookies from "../../config/cookies";
 import { useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
 
+import axios from "../../config/axios";
+import cookies from "../../config/cookies";
 import { SEO } from "../../components";
 
 export default function AdminLogin() {
-    const [loginError, setLoginError] = useState(false);
+    const [loginError, setLoginError] = useState();
+    const [loginSuccess, setLoginSuccess] = useState();
 
     // Setting SEO
     const SEOPage = {
@@ -24,22 +25,26 @@ export default function AdminLogin() {
 
     // POST data from form
     const onSubmit = async (data) => {
-        // const body = {
-        //     email: data.email,
-        //     password: data.password,
-        // };
+        const body = {
+            email: data.email,
+            password: data.password,
+        };
 
-        // try {
-        //     const res = await axios.post("/login", body);
-        //     if (res.data.status == "error") {
-        //         throw new Error(res.data.status);
-        //     } else if (res.data) {
-        //         cookies.createCookie(res.data.acces_token);
-        //         window.location.href = "/";
-        //     }
-        // } catch (error) {
-        //     setLoginError(true);
-        // }
+        try {
+            const res = await axios.post("/login", body);
+
+            if (res.data.status == "error") {
+                throw new Error(res.data.status);
+            } else if (res.data) {
+                cookies.createCookie(res.data.acces_token);
+                setLoginSuccess(true);
+                setTimeout(() => {
+                    window.location.href = "/admin/dashboard";
+                }, 1500);
+            }
+        } catch (error) {
+            setLoginError(true);
+        }
     };
 
     return (
@@ -110,6 +115,13 @@ export default function AdminLogin() {
                                                 Invalid login, please try again!
                                             </div>
                                         )}
+                                        {
+                                            loginSuccess && (
+                                                <div className="bg-green-300 mb-3 p-4 text-green-800">
+                                                    Login success!
+                                                </div>
+                                            )
+                                        }
                                         <button
                                             type="submit"
                                             className="bg-[#070708] hover:bg-[#1f1f24] text-white font-bold py-3 px-4"
