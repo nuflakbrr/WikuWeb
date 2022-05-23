@@ -7,7 +7,9 @@ import { NavLink } from "react-router-dom";
 import { SEO } from "../components";
 
 export default function Login() {
-  const [loginError, setLoginError] = useState(false);
+  const [loginError, setLoginError] = useState();
+  const [loginSuccess, setLoginSuccess] = useState();
+
   // Setting SEO
   const SEOPage = {
     title: "Masuk - WIKUSAMA",
@@ -34,7 +36,9 @@ export default function Login() {
         throw new Error(res.data.status);
       } else if (res.data) {
         cookies.createCookie(res.data.acces_token);
-        window.location.href = "/";
+        setTimeout(() => {
+          window.location.href = "/";
+        }, 1500)
       }
     } catch (error) {
       setLoginError(true);
@@ -132,6 +136,11 @@ export default function Login() {
                     {loginError && (
                       <div className="bg-red-300 mb-3 p-4 text-red-800">
                         Invalid login, please try again!
+                      </div>
+                    )}
+                    {loginSuccess && (
+                      <div className="bg-green-300 mb-3 p-4 text-green-800">
+                        Login success!
                       </div>
                     )}
                     <button
