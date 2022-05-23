@@ -36,6 +36,7 @@ export default function Login() {
         throw new Error(res.data.status);
       } else if (res.data) {
         cookies.createCookie(res.data.acces_token);
+        setLoginSuccess(true);
         setTimeout(() => {
           window.location.href = "/";
         }, 1500)
