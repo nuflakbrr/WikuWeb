@@ -4,7 +4,11 @@ import { SearchIcon, CalendarIcon, BellIcon } from "@heroicons/react/outline";
 import cookies from "../../config/cookies";
 
 function HeaderSection(props) {
+  // GET data from cookies
   const admin = cookies.getDecodedCookie();
+
+  // Temporary GET user profile image
+  const userImage = `http://103.176.79.55:3000/${admin.foto_profile}`;
 
   return (
     <section className="flex justify-between items-center mb-12">
@@ -31,7 +35,11 @@ function HeaderSection(props) {
           <BellIcon className="w-5" />
           <div className="absolute rounded-full w-1.5 h-1.5 top-0.5 right-0.5 bg-red-500" />
         </button>
-        <div className="bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')] w-10 h-10 rounded-full bg-center bg-cover ml-2" />
+        <img
+          className="h-10 w-10 object-cover rounded-full ml-2"
+          src={userImage}
+          alt="User Image Profile"
+        />
       </div>
     </section>
   );
