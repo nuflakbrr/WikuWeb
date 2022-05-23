@@ -1,6 +1,8 @@
 import React from "react";
-import Navbar from "../../components/Admin/Navbar";
 import { CalendarIcon, BellIcon } from "@heroicons/react/outline";
+
+import cookies from "../../config/cookies";
+import Navbar from "../../components/Admin/Navbar";
 import ReportButton from "../../components/Admin/ReportButton";
 import NumberOf from "../../components/Admin/NumberOf";
 import { SEO } from "../../components";
@@ -8,7 +10,7 @@ import { SEO } from "../../components";
 function Dashboard(props) {
   // Setting SEO
   const SEOPage = {
-    title: "Dasbor - WIKUSAMA",
+    title: "Dasbor Admin - WIKUSAMA",
     description: "WIKUSAMA",
     siteUrl: "https://wikusama.com",
     ogType: "website",
@@ -16,6 +18,9 @@ function Dashboard(props) {
     twitter: "@wikusama",
     twImage: "https://wikusama.com/tw.jpg",
   }
+
+  // GET data from cookies
+  const admin = cookies.getDecodedCookie();
 
   return (
     <div className="overflow-x-hidden">
@@ -25,7 +30,7 @@ function Dashboard(props) {
         <section className="flex justify-between items-center mb-12">
           <div>
             <h1 className="font-extrabold text-3xl">User Management</h1>
-            <p className="text-philippine-silver">Welcome back, Roy!</p>
+            <p className="text-philippine-silver">Welcome back, {admin.username}!</p>
           </div>
 
           <div className="flex gap-4 items-center">
