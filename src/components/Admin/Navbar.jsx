@@ -8,7 +8,17 @@ import {
 } from "@heroicons/react/solid";
 import { useResolvedPath, useMatch, Link } from "react-router-dom";
 
+import cookies from "../../config/cookies";
+
 function Navbar(props) {
+  const admin = cookies.getDecodedCookie();
+
+  // Block Access if Login Role is not Admin
+  if (admin.role !== 'admin') {
+    alert('Anda tidak memiliki akses ke halaman ini')
+    window.location.href = '/'
+  }
+
   // logout function
   const logout = () => {
     document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/admin;"
