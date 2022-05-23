@@ -30,11 +30,14 @@ function App() {
       <Route path="/biodata" element={<Biodata />} />
       <Route path="/profile/*" element={<Profile />} />
       <Route path="/gallery" element={<Gallery />} />
-      <Route path="/admin" element={<Dashboard />} />
+
+      {/* Admin Side */}
       <Route path="/admin/login" element={<AdminLogin />} />
+      <Route path="/admin/dashboard" element={<Dashboard />} />
       <Route path="/admin/biodata" element={<BiodataAdmin />} />
       <Route path="/admin/biodata/edit/:idUser" element={<EditBiodata />} />
       <Route path="/admin/image" element={<Image />} />
+
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
