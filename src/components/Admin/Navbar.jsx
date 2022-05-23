@@ -9,12 +9,18 @@ import {
 import { useResolvedPath, useMatch, Link } from "react-router-dom";
 
 function Navbar(props) {
+  // logout function
+  const logout = () => {
+    document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/admin;"
+    window.location.href = '/admin/login'
+  }
+
   return (
     <nav className="fixed bg-white w-[6vw] h-screen flex flex-col items-center justify-between py-5 overflow-hidden border border-[#acafc0]">
       <h1 className="text-carmine-pink font-black text-3xl">W</h1>
 
       <div className="grid gap-10">
-        <CustomLink to="/admin" active={props.adminActive}>
+        <CustomLink to="/admin/dashboard" active={props.adminActive}>
           <UserIcon className="w-6" />
         </CustomLink>
         <CustomLink to="/admin/biodata" active={props.biodataActive}>
@@ -29,12 +35,12 @@ function Navbar(props) {
         <CustomLink to="settings">
           <CogIcon className="w-6" />
         </CustomLink>
-        <CustomLink to="logout">
+        <button className="p-2 rounded-full" onClick={logout}>
           <LogoutIcon
             className="w-6"
             style={{ transform: "scale(-1,1)" }} //flipping horizontally
           />
-        </CustomLink>
+        </button>
       </div>
     </nav>
   );
@@ -46,9 +52,8 @@ function CustomLink(props) {
 
   return (
     <Link
-      className={`p-2 rounded-full ${
-        (match || props.active) && "bg-lotion text-carmine-pink"
-      } ${!match && !props.active && "text-vampire-black"}`}
+      className={`p-2 rounded-full ${(match || props.active) && "bg-lotion text-carmine-pink"
+        } ${!match && !props.active && "text-vampire-black"}`}
       to={props.to}
       {...props}
     >
