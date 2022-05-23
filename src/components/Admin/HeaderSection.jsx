@@ -1,12 +1,16 @@
 import React from "react";
 import { SearchIcon, CalendarIcon, BellIcon } from "@heroicons/react/outline";
 
+import cookies from "../../config/cookies";
+
 function HeaderSection(props) {
+  const admin = cookies.getDecodedCookie();
+
   return (
     <section className="flex justify-between items-center mb-12">
       <div>
         <h1 className="font-extrabold text-3xl">{props.title}</h1>
-        <p className="text-philippine-silver">{props.message}</p>
+        <p className="text-philippine-silver">{props.message} {admin.username}!</p>
       </div>
 
       <div className="flex gap-4 items-center">

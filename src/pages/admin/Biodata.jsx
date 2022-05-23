@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../../components/Admin/Navbar";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
+
 import TableRow from "../../components/Admin/TableRow";
 import ReportButton from "../../components/Admin/ReportButton";
 import HeaderSection from "../../components/Admin/HeaderSection";
@@ -79,7 +80,7 @@ export default function Biodata(props) {
       <div className="absolute right-0 bg-ghost-white w-[94vw] min-h-screen py-6 px-10">
         <HeaderSection
           title="Biodata management"
-          message="Welcome back, Roy!"
+          message="Welcome back, "
           inputPlaceholder="Search user..."
         />
 

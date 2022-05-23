@@ -22,7 +22,7 @@ export default function Image(props) {
       <div className="absolute right-0 bg-ghost-white w-[94vw] min-h-screen py-6 px-10">
         <HeaderSection
           title="Image management"
-          message="Welcome back, Roy!"
+          message="Welcome back, "
           inputPlaceholder="Search image..."
         />
         <div className="flex w-full min-h-[2.5rem] bg-carmine-pink text-white justify-between items-center px-4">
