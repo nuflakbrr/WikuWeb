@@ -35,6 +35,8 @@ export default function AdminLogin() {
 
             if (res.data.status == "error") {
                 throw new Error(res.data.status);
+            } else if (res.data.user.role !== "admin") {
+                setLoginError(true)
             } else if (res.data) {
                 cookies.createCookie(res.data.acces_token);
                 setLoginSuccess(true);
