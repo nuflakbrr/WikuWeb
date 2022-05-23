@@ -14,7 +14,7 @@ function HeaderSection(props) {
     <section className="flex justify-between items-center mb-12">
       <div>
         <h1 className="font-extrabold text-3xl">{props.title}</h1>
-        <p className="text-philippine-silver">{props.message} {admin.username}!</p>
+        <p className="text-philippine-silver">Welcome back, {admin.username}!</p>
       </div>
 
       <div className="flex gap-4 items-center">

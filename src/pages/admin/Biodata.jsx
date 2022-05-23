@@ -80,7 +80,6 @@ export default function Biodata(props) {
       <div className="absolute right-0 bg-ghost-white w-[94vw] min-h-screen py-6 px-10">
         <HeaderSection
           title="Biodata management"
-          message="Welcome back, "
           inputPlaceholder="Search user..."
         />
 
