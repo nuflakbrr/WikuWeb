@@ -11,20 +11,21 @@ import { useResolvedPath, useMatch, Link } from "react-router-dom";
 import cookies from "../../config/cookies";
 
 function Navbar(props) {
-  const admin = cookies.getDecodedCookie();
+  // const admin = cookies.getDecodedCookie();
 
   // Block Access if Login Role is not Admin
-  if (admin.role !== 'admin') {
-    alert('Anda tidak memiliki akses ke halaman ini')
-    window.location.href = '/'
-    document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/admin;"
-  }
+  // if (admin.role !== 'admin') {
+  //   alert('Anda tidak memiliki akses ke halaman ini')
+  //   window.location.href = '/'
+  //   document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/admin;"
+  // }
 
   // logout function
   const logout = () => {
-    document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/admin;"
-    window.location.href = '/admin/login'
-  }
+    document.cookie =
+      "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/admin;";
+    window.location.href = "/admin/login";
+  };
 
   return (
     <nav className="fixed bg-white w-[6vw] h-screen flex flex-col items-center justify-between py-5 overflow-hidden border border-[#acafc0]">
@@ -63,8 +64,9 @@ function CustomLink(props) {
 
   return (
     <Link
-      className={`p-2 rounded-full ${(match || props.active) && "bg-lotion text-carmine-pink"
-        } ${!match && !props.active && "text-vampire-black"}`}
+      className={`p-2 rounded-full ${
+        (match || props.active) && "bg-lotion text-carmine-pink"
+      } ${!match && !props.active && "text-vampire-black"}`}
       to={props.to}
       {...props}
     >

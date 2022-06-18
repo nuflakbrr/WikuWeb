@@ -17,23 +17,31 @@ function Dashboard(props) {
     ogImage: "https://wikusama.com/og.jpg",
     twitter: "@wikusama",
     twImage: "https://wikusama.com/tw.jpg",
-  }
+  };
 
   // GET data from cookies
-  const admin = cookies.getDecodedCookie();
+  // const admin = cookies.getDecodedCookie();
 
   // Temporary GET user profile image
-  const userImage = `http://103.176.79.55:3000/${admin.foto_profile}`;
+  // const userImage = `http://103.176.79.55:3000/${admin.foto_profile}`;
 
   return (
     <div className="overflow-x-hidden">
-      <SEO title={SEOPage.title} description={SEOPage.description} siteUrl={SEOPage.siteUrl} ogType={SEOPage.ogType} ogImage={SEOPage.ogImage} twitter={SEOPage.twitter} twImage={SEOPage.twImage} />
+      <SEO
+        title={SEOPage.title}
+        description={SEOPage.description}
+        siteUrl={SEOPage.siteUrl}
+        ogType={SEOPage.ogType}
+        ogImage={SEOPage.ogImage}
+        twitter={SEOPage.twitter}
+        twImage={SEOPage.twImage}
+      />
       <Navbar />
       <div className="absolute right-0 bg-ghost-white w-[94vw] min-h-screen py-6 px-10">
         <section className="flex justify-between items-center mb-12">
           <div>
             <h1 className="font-extrabold text-3xl">User Management</h1>
-            <p className="text-philippine-silver">Welcome back, {admin.username}!</p>
+            {/* <p className="text-philippine-silver">Welcome back, {admin.username}!</p> */}
           </div>
 
           <div className="flex gap-4 items-center">
@@ -44,11 +52,11 @@ function Dashboard(props) {
               <BellIcon className="w-5" />
               <div className="absolute rounded-full w-1.5 h-1.5 top-0.5 right-0.5 bg-red-500" />
             </button>
-            <img
+            {/* <img
               className="h-10 w-10 object-cover rounded-full ml-2"
               src={userImage}
               alt="Admin Image Profile"
-            />
+            /> */}
           </div>
         </section>
 

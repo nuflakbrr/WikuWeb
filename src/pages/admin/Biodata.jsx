@@ -6,6 +6,7 @@ import TableRow from "../../components/Admin/TableRow";
 import ReportButton from "../../components/Admin/ReportButton";
 import HeaderSection from "../../components/Admin/HeaderSection";
 import { SEO } from "../../components";
+import { useSearchParams, Link } from "react-router-dom";
 
 export default function Biodata(props) {
   // Setting SEO
@@ -17,7 +18,7 @@ export default function Biodata(props) {
     ogImage: "https://wikusama.com/og.jpg",
     twitter: "@wikusama",
     twImage: "https://wikusama.com/tw.jpg",
-  }
+  };
 
   const data = [
     {
@@ -73,9 +74,22 @@ export default function Biodata(props) {
       jurusan: "TKJ",
     },
   ];
+
+  const pagesCount = 91;
+  let [searchParams, setSearchParams] = useSearchParams();
+  let pageIndex = Number(searchParams.get("page")) || 1;
+
   return (
     <div className="overflow-x-hidden">
-      <SEO title={SEOPage.title} description={SEOPage.description} siteUrl={SEOPage.siteUrl} ogType={SEOPage.ogType} ogImage={SEOPage.ogImage} twitter={SEOPage.twitter} twImage={SEOPage.twImage} />
+      <SEO
+        title={SEOPage.title}
+        description={SEOPage.description}
+        siteUrl={SEOPage.siteUrl}
+        ogType={SEOPage.ogType}
+        ogImage={SEOPage.ogImage}
+        twitter={SEOPage.twitter}
+        twImage={SEOPage.twImage}
+      />
       <Navbar />
       <div className="absolute right-0 bg-ghost-white w-[94vw] min-h-screen py-6 px-10">
         <HeaderSection
@@ -112,11 +126,31 @@ export default function Biodata(props) {
           <button className="bg-white py-2 px-3">
             <ChevronLeftIcon className="text-carmine-pink w-5" />
           </button>
-          <button className="bg-carmine-pink text-white py-2 px-4">1</button>
-          <button className="bg-white py-2 px-4">2</button>
-          <button className="bg-white p-2 px-4">3</button>
+          {[...Array(3)].map((val, index) => (
+            <Link to={`?page=${index + 1}`}>
+              <button
+                className={`${
+                  pageIndex === index + 1
+                    ? "bg-carmine-pink text-white"
+                    : "bg-white"
+                } py-2 px-4`}
+              >
+                {index + 1}
+              </button>
+            </Link>
+          ))}
           <button className="bg-white p-2 px-4">...</button>
-          <button className="bg-white p-2 px-4">99</button>
+          <Link to={`?page=${pagesCount}`}>
+            <button
+              className={`${
+                pageIndex === pagesCount
+                  ? "bg-carmine-pink text-white"
+                  : "bg-white"
+              } py-2 px-4`}
+            >
+              {pagesCount}
+            </button>
+          </Link>
           <button className="bg-white p-2 px-3">
             <ChevronRightIcon className="text-carmine-pink w-5" />
           </button>
